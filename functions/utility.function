@@ -224,7 +224,7 @@ PITERM() {
     sudo chmod +x QtTermTCP64
     sudo mv QtTermTCP64 /usr/local/bin/
 
-    cat >piqttermtcp.desktop <<EOF
+    cat >qttermtcp64.desktop <<EOF
 [Desktop Entry]
 Name=QtTermTCP64
 GenericName=QtTermTCP64
@@ -413,7 +413,7 @@ EOF
 VNC() {
     cd ${HOME} || return
     PACKAGE=$(curl -s https://www.realvnc.com/en/connect/download/viewer/linux/ | grep x64.deb | head -1 | sed s'/.*href="//;s/".*//;s/.*files\///')
-
+	
     wget https://downloads.realvnc.com/download/file/viewer.files/${PACKAGE}
     sudo dpkg -i ${PACKAGE}
     rm ${PACKAGE}

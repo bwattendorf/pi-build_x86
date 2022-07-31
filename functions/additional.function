@@ -385,7 +385,7 @@ sudo apt-get install -y lcl-2.0 lazarus-2.0 fp-compiler-3.2.0 fpc-3.2.0 libssl-d
 		default-mysql-server-core gawk libcgi-fast-perl libcgi-pm-perl libconfig-inifiles-perl libdbd-mysql-perl \
 		libdbi-perl libencode-locale-perl libfcgi-perl libhtml-parser-perl libhtml-tagset-perl \
 		libhtml-template-perl libhttp-date-perl libhttp-message-perl libio-html-perl liblwp-mediatypes-perl \
-		libmariadb-dev-compat libnetpbm10 libreadline5 libterm-readkey-perl libtimedate-perl liburi-perl \
+		libmariadb-dev-compat libnetpbm10 readline-common libterm-readkey-perl libtimedate-perl liburi-perl \
 
 cd $HOME
 git clone https://github.com/ok2cqr/cqrlog.git
@@ -481,8 +481,8 @@ GRIDTRACKER() {
 	sudo apt-get install -y libgconf-2-4
 	#determine if 32/64 bit and set download link accordingly. issue #382
 	if [ `getconf LONG_BIT` = '32' ]; then
-	#GRIDDLL=$(curl -s https://download.gridtracker.org/latest_release.html | grep x86 | sed 's/.*href="//;s/">.*//')
-	GRIDDLL=$(curl -s https://storage.googleapis.com/gt_download/ | awk 'BEGIN{FS="<Key>"; OFS="\n<Key>"} {$1=$1} 1' | grep arm32 | sed '/<Key>nwjs/d;/<Key>test/d' | head -1 | sed 's/<Key>//;s/<\/Key>.*//')	
+	#GRIDDLL=$(curl -s https://download.gridtracker.org/latest_release.html | grep x64 | sed 's/.*href="//;s/">.*//')
+	GRIDDLL=$(curl -s https://storage.googleapis.com/gt_download/ | awk 'BEGIN{FS="<Key>"; OFS="\n<Key>"} {$1=$1} 1' | grep x64 | sed '/<Key>nwjs/d;/<Key>test/d' | head -1 | sed 's/<Key>//;s/<\/Key>.*//')	
 	GT_DIR=$(echo $GRIDDLL | sed 's|/.*||')
 	GRIDDLL=$(echo $GRIDDLL | sed 's/.*GridTracker/GridTracker/')
 	else

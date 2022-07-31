@@ -59,7 +59,7 @@ CHECK() {
 	#----------------------------------------------------#
 	#		ARDOP GUI
 	#----------------------------------------------------#
-	if [ -f ${HOME}/ardop/piARDOP_GUI ]; then
+	if [ -f ${HOME}/ardop/ARDOP_GUI ]; then
 		echo "ARDOPGUI=Installed" >> $UPDATEFILE
 	else
 		echo "ARDOPGUI=Not_Installed" >> $UPDATEFILE
@@ -562,7 +562,7 @@ fi
 #----------------------------------------------------#
 #		piQtTermTCP
 #----------------------------------------------------#
-if [ -f /usr/local/bin/piQtTermTCP ]; then
+if [ -f /usr/local/bin/QtTermTCP64 ]; then
 	echo "PITERM=Installed" >> $UPDATEFILE
 else
 	echo "PITERM=Not_Installed" >> $UPDATEFILE
