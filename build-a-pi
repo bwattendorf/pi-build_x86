@@ -572,7 +572,7 @@ echo "#  BAP update tool not found.  #"
 echo "#  Repairing, please stand by  #"
 echo "################################"
 cd $HOME
-git clone https://github.com/km4ack/pi-build.git || echo "Could not connect to Github. Check your internet and try again"
+git clone https://github.com/bwattendorf/pi-build_x86.git || echo "Could not connect to Github. Check your internet and try again"
 echo "Repair complete. Run the Build a Pi update tool using the shortcut in the Pi menu"
 else
 clear;echo;echo

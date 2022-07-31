@@ -1,5 +1,9 @@
 # Description
 
+NOTE:
+This is a fork of  Build a pi to install on a X86 PC with Raspbian Buster installed.
+    The changes are by W1BAW Bruce Wattendorf
+
 Build-a-Pi will allow you to get up and running fast with a Raspberry Pi for ham radio.
 Rather than downloading a pre-built image where you have no choices in the build, Build-a-
 Pi gives you complete control over the build. It allows you to choose the applications you 
@@ -22,7 +26,7 @@ Use [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to download and
 
 Power up your Raspberry Pi, login, open the terminal, and run the following command.
 
-     git clone https://github.com/km4ack/pi-build.git \
+     git clone https://github.com/bwattendorf/pi-build_x86.git \
       $HOME/pi-build && bash $HOME/pi-build/build-a-pi
 
 Additional help can be found in the video below.
