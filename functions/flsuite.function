@@ -30,7 +30,7 @@ FLSTART() {
 	if [ `getconf LONG_BIT` = '64' ]; then
 	LIBJPG=libjpeg62-turbo-dev
 	else
-	LIBJPG=libjpeg9-dev
+	LIBJPG=libjpeg62-turbo-dev
 	fi
 	sudo apt-get install -y libfltk1.3-dev $LIBJPG libxft-dev libxinerama-dev libxcursor-dev libsndfile1-dev libsamplerate0-dev portaudio19-dev libpulse-dev libusb-1.0-0-dev texinfo libudev-dev
 
