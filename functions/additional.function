@@ -34,9 +34,9 @@ PAT() {
 
 	#install golang needed for pat build
 	cd
-	wget https://go.dev/dl/go1.17.7.linux-arm64.tar.gz
-	sudo tar -C /usr/local -xzf go1.17.7.linux-arm64.tar.gz
-	rm go1.17.7.linux-arm64.tar.gz
+	wget https://go.dev/dl/go1.17.7.linux-amd64.tar.gz
+	sudo tar -C /usr/local -xzf go1.17.7.linux-amd64.tar.gz
+	rm go1.17.7.linux-amd64.tar.gz
 
 	echo "PATH=$PATH:/usr/local/go/bin" >> $HOME/.profile
 	echo "GOPATH=$HOME/go" >> $HOME/.profile
@@ -55,8 +55,8 @@ PAT() {
 	rm -rf $HOME/pat
 	else
 	#install deb file for 32 bit systems
-	NEWPATV=$(curl -s https://github.com/la5nta/pat/releases | grep armhf | head -1 | sed 's/.*pat_/pat_/' | sed 's/<\/a>.*$//')
-	NEWPAT=$(echo ${NEWPATV} | sed 's/pat_//' | sed 's/_linux_armhf.deb//' | sed 's/0\.//')
+	NEWPATV=$(curl -s https://github.com/la5nta/pat/releases | grep amd64 | head -1 | sed 's/.*pat_/pat_/' | sed 's/<\/a>.*$//')
+	NEWPAT=$(echo ${NEWPATV} | sed 's/pat_//' | sed 's/_linux_amd64.deb//' | sed 's/0\.//')
 	echo "new pat v ${NEWPATV}"
 	echo "new pat ${NEWPAT}"
 	wget --tries 2 --connect-timeout=60 https://github.com/la5nta/pat/releases/download/v0.${NEWPAT}/${NEWPATV}
@@ -200,8 +200,8 @@ sudo cp ./artwork/icon_128.svg /usr/share/pixmaps/js8call_icon.svg
 
 #Old Way left for reference
 	#cd ${DIR}
-	#JS8LATE=$(curl -s http://files.js8call.com/latest.html | grep armhf | awk '{ print $2 }' | sed 's/href=//' | sed 's/"//g')
-	#JS8PKG=$(curl -s http://files.js8call.com/latest.html | grep armhf | awk '{ print $2 }' | sed 's/\///g' | sed 's/href="http:files.js8call.com[0-9].[0-9].[0-9]//' | sed 's/"//')
+	#JS8LATE=$(curl -s http://files.js8call.com/latest.html | grep amd64 | awk '{ print $2 }' | sed 's/href=//' | sed 's/"//g')
+	#JS8PKG=$(curl -s http://files.js8call.com/latest.html | grep amd64 | awk '{ print $2 }' | sed 's/\///g' | sed 's/href="http:files.js8call.com[0-9].[0-9].[0-9]//' | sed 's/"//')
 	#wget --tries 2 --connect-timeout=60 ${JS8LATE} || echo "Can't Download JS8Call" >>${BUILDLOG}
 	#sudo dpkg -i ${JS8PKG}
 	#sudo apt-get --fix-broken -y install
@@ -258,7 +258,7 @@ WSJTX() {
 
 #old way of installing. left for reference
 	#cd ${DIR}
-	#WSPKG=$(curl -s https://physics.princeton.edu/pulsar/k1jt/wsjtx.html | grep armhf.deb | sed 's/^.*wsjtx/wsjtx/' | sed 's/deb.*$/deb/' | head -1)
+	#WSPKG=$(curl -s https://physics.princeton.edu/pulsar/k1jt/wsjtx.html | grep amd64.deb | sed 's/^.*wsjtx/wsjtx/' | sed 's/deb.*$/deb/' | head -1)
 	#wget --tries 2 --connect-timeout=60 --no-check-certificate https://physics.princeton.edu/pulsar/k1jt/$WSPKG
 	#WSJTXSUCCESS=$?
 	#sudo dpkg -i $WSPKG
@@ -272,8 +272,8 @@ WSJTX() {
 	#WSJTX2() {
 	#	if [ "$WSJTXSUCCESS" ! = 0 ]; then
 	#		cd ${DIR}
-	#		wget --tries 2 --connect-timeout=60 https://sourceforge.net/projects/wsjt/files/wsjtx-2.2.2/wsjtx_2.2.2_armhf.deb
-	#		sudo dpkg -i wsjtx_2.2.2_armhf.deb
+	#		wget --tries 2 --connect-timeout=60 https://sourceforge.net/projects/wsjt/files/wsjtx-2.2.2/wsjtx_2.2.2_amd64.deb
+	#		sudo dpkg -i wsjtx_2.2.2_amd64.deb
 	#		sudo apt-get --fix-broken -y install
 	#		sudo dpkg -i wsjtx_2.2.2_armhf.deb
 	#	fi
@@ -346,9 +346,9 @@ EOF
 ##################################
 M0IAX() {
 	cd ${DIR} || return
-	wget http://m0iax.com/wp-content/uploads/2020/08/JS8CallUtils_RaspberryPi.zip
-	unzip JS8CallUtils_RaspberryPi.zip
-	rm JS8CallUtils_RaspberryPi.zip
+	wget https://m0iax.com/wp-content/uploads/2021/04/JS8CallUtils_v2_ubuntu2004.zip
+	unzip JS8CallUtils_v2_ubuntu2004.zip
+	rm JS8CallUtils_v2_ubuntu2004.zip
 	chmod +x JS8CallUtils_v2
 	sudo mv JS8CallUtils_v2 /usr/local/bin
 
@@ -481,12 +481,12 @@ GRIDTRACKER() {
 	sudo apt-get install -y libgconf-2-4
 	#determine if 32/64 bit and set download link accordingly. issue #382
 	if [ `getconf LONG_BIT` = '32' ]; then
-	#GRIDDLL=$(curl -s https://download.gridtracker.org/latest_release.html | grep arm32 | sed 's/.*href="//;s/">.*//')
+	#GRIDDLL=$(curl -s https://download.gridtracker.org/latest_release.html | grep x86 | sed 's/.*href="//;s/">.*//')
 	GRIDDLL=$(curl -s https://storage.googleapis.com/gt_download/ | awk 'BEGIN{FS="<Key>"; OFS="\n<Key>"} {$1=$1} 1' | grep arm32 | sed '/<Key>nwjs/d;/<Key>test/d' | head -1 | sed 's/<Key>//;s/<\/Key>.*//')	
 	GT_DIR=$(echo $GRIDDLL | sed 's|/.*||')
 	GRIDDLL=$(echo $GRIDDLL | sed 's/.*GridTracker/GridTracker/')
 	else
-	#GRIDDLL=$(curl -s https://download.gridtracker.org/latest_release.html | grep arm64 | sed 's/.*href="//;s/">.*//')
+	#GRIDDLL=$(curl -s https://download.gridtracker.org/latest_release.html | grep x64 | sed 's/.*href="//;s/">.*//')
 	GRIDDLL=$(curl -s https://storage.googleapis.com/gt_download/ | awk 'BEGIN{FS="<Key>"; OFS="\n<Key>"} {$1=$1} 1' | grep arm32 | sed '/<Key>nwjs/d;/<Key>test/d' | head -1 | sed 's/<Key>//;s/<\/Key>.*//')
 	GT_DIR=$(echo $GRIDDLL | sed 's|/.*||')
 	GRIDDLL=$(echo $GRIDDLL | sed 's/.*GridTracker/GridTracker/')
@@ -497,9 +497,9 @@ GRIDTRACKER() {
 	rm GridTracker*.gz
 	#determine if 32/64 bit and get correct directory name.
 	if [ `getconf LONG_BIT` = '32' ]; then
-	OLDFOLDER=$(ls | grep GridTracker*-linux-arm32)
+	OLDFOLDER=$(ls | grep GridTracker*-linux-x32)
 	else
-	OLDFOLDER=$(ls | grep GridTracker*-linux-arm64)
+	OLDFOLDER=$(ls | grep GridTracker*-linux-x64)
 	fi
 	mv "$OLDFOLDER" $HOME/GridTracker
 	cat >gridtracker.desktop <<EOF
@@ -842,7 +842,7 @@ mv $HOME/Downloads/hamrs* $HOME/Downloads/old-hamrs
 fi
 
 cd ${HOME}/Downloads
-DL=$(curl https://www.hamrs.app | grep armv7 | sed 's/.*href="//;s/".*//')
+DL=$(curl https://www.hamrs.app | grep x86_64 | sed 's/.*href="//;s/".*//')
 wget ${DL}
 HAMRS=$(ls | grep hamrs-)
 mv ${HAMRS} hamrs
@@ -857,10 +857,10 @@ sudo usermod -a -G fuse pi
 
 #as of Feb 2022 there is no 64 bit version of HAMRS. The following will allow it to run
 if [ `getconf LONG_BIT` = '64' ]; then
-sudo dpkg --add-architecture armhf 
+# sudo dpkg --add-architecture armhf 
 sudo apt-get update
-sudo apt install -y libasound2:armhf zlib1g-dev:armhf fuse:armhf libglib2.0-0:armhf libnss3:armhf libatk1.0-0:armhf \
-libatk-bridge2.0-0:armhf libx11-xcb1:armhf libgdk-pixbuf-2.0-0:armhf libgtk-3-0:armhf libdrm2:armhf libgbm1:armhf
+sudo apt install -y libasound2 zlib1g-dev fuse libglib2.0-0 libnss3 libatk1.0-0 \
+libatk-bridge2.0-0 libx11-xcb1 libgdk-pixbuf-2.0-0 libgtk-3-0 libdrm2 libgbm1
 fi
 
 	#create menu item and download icon	
