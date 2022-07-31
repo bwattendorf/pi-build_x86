@@ -213,13 +213,13 @@ TELNET() {
 PITERM() {
     cd ${DIR} || return
     #determine if 32 or 64 bit and install correct dependencies. Thanks Ben,KU0HN! Reference: https://groups.io/g/bpq32/message/34486
-    if [ `getconf LONG_BIT` = '32' ]; then
-    sudo apt install libqt5serialport5
-    else
+    #if [ `getconf LONG_BIT` = '32' ]; then
+    #sudo apt install libqt5serialport5
+    #else
     #sudo dpkg --add-architecture armhf
     sudo apt update
     sudo apt install -y libqt5widgets5 libqt5serialport5 libasound2 libasound2-plugins
-    fi
+    #fi
     wget --tries 2 --connect-timeout=60 https://www.cantab.net/users/john.wiseman/Downloads/Beta/QtTermTCP64
     sudo chmod +x QtTermTCP64
     sudo mv QtTermTCP64 /usr/local/bin/
@@ -412,14 +412,14 @@ EOF
 ##################################
 VNC() {
     cd ${HOME} || return
-    PACKAGE=$(curl -s https://www.realvnc.com/en/connect/download/viewer/raspberrypi/ | grep ARM.deb | head -1 | sed s'/.*href="//;s/".*//;s/.*files\///')
+    PACKAGE=$(curl -s https://www.realvnc.com/en/connect/download/viewer/linux/ | grep x64.deb | head -1 | sed s'/.*href="//;s/".*//;s/.*files\///')
 
     wget https://downloads.realvnc.com/download/file/viewer.files/${PACKAGE}
     sudo dpkg -i ${PACKAGE}
     rm ${PACKAGE}
-    if [ `getconf LONG_BIT` = '64' ]; then
+    #if [ `getconf LONG_BIT` = '64' ]; then
     sudo apt --fix-broken install -y
-    fi
+    #fi
 }
 
 ##################################

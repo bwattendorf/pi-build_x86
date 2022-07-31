@@ -151,14 +151,14 @@ ARDOP() {
 ARDOPGUI() {
     mkdir -p ${HOME}/ardop
     cd ${HOME}/ardop || return
-    wget --tries 2 --connect-timeout=60 https://www.cantab.net/users/john.wiseman/Downloads/Beta/piARDOP_GUI
-    sudo chmod +x ${HOME}/ardop/piARDOP_GUI
+    wget --tries 2 --connect-timeout=60 https://www.cantab.net/users/john.wiseman/Downloads/Beta/ARDOP_GUI
+    sudo chmod +x ${HOME}/ardop/ARDOP_GUI
     cat >ardopgui.desktop <<EOF
 [Desktop Entry]
 Name=ARDOP GUI
 GenericName=ARDOP GUI
 Comment=Graphical User Interface for ARDOP modem
-Exec=${HOME}/ardop/piARDOP_GUI
+Exec=${HOME}/ardop/ARDOP_GUI
 Terminal=false
 Type=Application
 Categories=Network;HamRadio;
