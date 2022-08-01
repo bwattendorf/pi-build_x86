@@ -500,8 +500,7 @@ Name=GridTracker
 Comment=GridTracker
 GenericName=GridTracker, a WSJT-X Companion
 Exec=gridTracker --disable-accelerated-2d-canvas --num-raster-threads=2
-Icon=${HOME}/GridTracker/gridtracker.png
-Path=/usr/share/applications/
+Icon=/usr/share/gridtracker/gridview.png
 Type=Application
 Encoding=UTF-8
 Terminal=false

@@ -136,13 +136,10 @@ ARDOP() {
     mkdir -p ${HOME}/ardop
     cd ${HOME}/ardop || return
     #determine if 64 bit and install correct dependencies.
-    if [ `getconf LONG_BIT` = '64' ]; then
-    #sudo dpkg --add-architecture armhf
     sudo apt update
     sudo apt install -y libqt5widgets5 libqt5serialport5 libasound2 libasound2-plugins
-    fi
-    wget --tries 2 --connect-timeout=60 https://www.cantab.net/users/john.wiseman/Downloads/Beta/ardopc64
-    sudo chmod +x ${HOME}/ardop/ardopc64
+    wget --tries 2 --connect-timeout=60 https://www.cantab.net/users/john.wiseman/Downloads/Beta/ardopc
+    sudo chmod +x ${HOME}/ardop/ardopc
 }
 
 ################################

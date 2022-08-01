@@ -51,7 +51,7 @@ CHECK() {
 	#----------------------------------------------------#
 	#		ARDOP
 	#----------------------------------------------------#
-	if [ -f ${HOME}/ardop/ardopc64 ]; then
+	if [ -f ${HOME}/ardop/ardopc ]; then
 		echo "ARDOP=Installed" >> $UPDATEFILE
 	else
 		echo "ARDOP=Not_Installed" >> $UPDATEFILE
