@@ -464,6 +464,8 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPREDICT" "$GPREDICT" "Satellite Tracking" \
 	false "TQSL" "$TQSL" "LOTW Software" \
 	false "GRIDCALC" "$GRIDCALC" "Grid Calculation Software" \
+	false "VARA-beta" "VARA and PAT beta" \
+	false "DIGI-PI" "DIGI-PI intgration" \
 	--button="Exit":1 \
 	--button="Next":2 >${ADDITIONAL}
 BUT=$?

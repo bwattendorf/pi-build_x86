@@ -1,0 +1,5 @@
+# script to install VARA and PAT Beta 
+#08/1/2022 W1BAW
+
+BUILDDIR=$HOME/.bap-source-files
+mkdir -p ${BUILDDIR}
