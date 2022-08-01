@@ -917,7 +917,7 @@ JTDX() {
 ##################################
 #	PAT Beta  W1BAW
 ##################################
-PATbeta() {
+VARA-beta() {
 	echo "##################"
 	echo "installing pat Beta"
 	echo "##################"
@@ -937,7 +937,7 @@ PATbeta() {
 ##################################
 #	DIGI pi install W1BAW
 ##################################
-DIGIpi() {
+DIGI-PI() {
 	echo "##################"
 	echo "installing DIGIpi"
 	echo "##################"
@@ -950,7 +950,7 @@ DIGIpi() {
 ##################################
 #	Cloud Log install W1BAW
 ##################################
-CloudLog() {
+CLOUD-LOG() {
 	echo "##################"
 	echo "installing Cloud log"
 	echo "##################"

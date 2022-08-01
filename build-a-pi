@@ -634,21 +634,7 @@ done <${UTILITY}
 #one for Build a Pi.
 bash ${HOME}/pi-build/menu-update
 
-#####################################
-#   Install VARA and Beta Pat
-#####################################
-source ${PATbeta}/VARA.function
-while read i; do
-	$i
-done <${PATbeta}
 
-#####################################
-#   Install DIGIpi
-#####################################
-source ${DIGIpi}/DIGIpi.function
-while read i; do
-	$i
-done <${DIGIpi}
 
 #####################################
 #	END CLEANUP
