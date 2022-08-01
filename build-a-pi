@@ -405,6 +405,8 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPREDICT" "Satellite Tracking" \
 	false "TQSL" "LOTW Software" \
 	false "GRIDCALC" "Grid Calculation Software" \
+	false "VARA-beta" "VARA and PAT beta" \
+	false "DIGI-PI" "DIGI-PI intgration" \
 	--button="Exit":1 \
 	--button="Check All and Continue":3 \
 	--button="Next":2 >${ADDITIONAL}
@@ -630,6 +632,22 @@ done <${UTILITY}
 #create new menu subcategories. One for FLDIGI Suite and
 #one for Build a Pi.
 bash ${HOME}/pi-build/menu-update
+
+#####################################
+#   Install VARA and Beta Pat
+#####################################
+source ${FUNCTIONS}/VARA.function
+while read i; do
+	$i
+done <${VARA}
+
+#####################################
+#   Install DIGIpi
+#####################################
+source ${FUNCTIONS}/DIGIpi.function
+while read i; do
+	$i
+done <${DIGIpi}
 
 #####################################
 #	END CLEANUP
