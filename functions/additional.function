@@ -480,7 +480,6 @@ GRIDTRACKER() {
 	cd ${HOME} || return
 	#sudo apt-get install -y libgconf-2-4
 	wget --tries 2 --connect-timeout=60 https://storage.googleapis.com/gt_download/nwjs-downloader/v0.60.0-1/nwjs-downloader_0.60.0-0_all.deb
-	sudo dpkg -i nwjs-downloader_0.60.0-0_all.deb
 	sudo apt-get --fix-broken -y install
 	sudo dpkg -i nwjs-downloader_0.60.0-0_all.deb
 	rm nwjs*.*.*.deb
