@@ -407,6 +407,7 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GRIDCALC" "Grid Calculation Software" \
 	false "VARA-beta" "VARA and PAT beta" \
 	false "DIGI-PI" "DIGI-PI intgration" \
+	false "CLOUD-LOG" "web based Logging Software" \
 	--button="Exit":1 \
 	--button="Check All and Continue":3 \
 	--button="Next":2 >${ADDITIONAL}
