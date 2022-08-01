@@ -494,21 +494,14 @@ GRIDTRACKER() {
 	#GRIDTAR=$(echo $GRIDDLL | sed 's/.*\///g')
 	sudo dpkg -i gridtracker_1.22.0725_all.deb
 	rm gridtracker_1.22.0725_all.deb
-	#determine if 32/64 bit and get correct directory name.
-	if [ `getconf LONG_BIT` = '32' ]; then
-	OLDFOLDER=$(ls | grep GridTracker*-linux-x64)
-	else
-	OLDFOLDER=$(ls | grep GridTracker*-linux-x64)
-	fi
-	mv "$OLDFOLDER" $HOME/GridTracker
 	cat >gridtracker.desktop <<EOF
 [Desktop Entry]
 Name=GridTracker
 Comment=GridTracker
 GenericName=GridTracker, a WSJT-X Companion
-Exec=${HOME}/GridTracker/GridTracker --disable-accelerated-2d-canvas --num-raster-threads=2
+Exec=gridTracker --disable-accelerated-2d-canvas --num-raster-threads=2
 Icon=${HOME}/GridTracker/gridtracker.png
-Path=${HOME}/GridTracker
+Path=/usr/share/applications/
 Type=Application
 Encoding=UTF-8
 Terminal=false
