@@ -636,15 +636,15 @@ bash ${HOME}/pi-build/menu-update
 #####################################
 #   Install VARA and Beta Pat
 #####################################
-source ${FUNCTIONS}/VARA.function
+source ${PATbeta}/VARA.function
 while read i; do
 	$i
-done <${VARA}
+done <${PATbeta}
 
 #####################################
 #   Install DIGIpi
 #####################################
-source ${FUNCTIONS}/DIGIpi.function
+source ${DIGIpi}/DIGIpi.function
 while read i; do
 	$i
 done <${DIGIpi}

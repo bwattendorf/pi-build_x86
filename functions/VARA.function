@@ -3,3 +3,22 @@
 
 BUILDDIR=$HOME/.bap-source-files
 mkdir -p ${BUILDDIR}
+
+##################################
+#	PAT Beta
+##################################
+PATbeta() {
+	echo "##################"
+	echo "installing pat Beta"
+	echo "##################"
+	
+
+	#install pat beta used for VARA
+	cd
+	wget https://drive.google.com/file/d/1KrYUsze-jVLokPUjU1DQONj7H0Eo9eQF/view?usp=sharing
+	sudo dpkg -i pat*.deb
+	sudo systemctl restart pat@pi
+	#install vara
+	curl -O https://raw.githubusercontent.com/WheezyE/Winelink/main/install_winelink.sh && bash install_winelink.sh vara_only
+	
+}

@@ -3,3 +3,17 @@
 
 BUILDDIR=$HOME/.bap-source-files
 mkdir -p ${BUILDDIR}
+
+
+##################################
+#	DIGI pi install
+##################################
+DIGIpi() {
+	echo "##################"
+	echo "installing DIGIpi"
+	echo "##################"
+	
+
+	
+	
+}
