@@ -478,23 +478,23 @@ EOF
 ##################################
 GRIDTRACKER() {
 	cd ${HOME} || return
-	sudo apt-get install -y libgconf-2-4
-	#determine if 32/64 bit and set download link accordingly. issue #382
-	if [ `getconf LONG_BIT` = '32' ]; then
-	#GRIDDLL=$(curl -s https://download.gridtracker.org/latest_release.html | grep x64 | sed 's/.*href="//;s/">.*//')
-	GRIDDLL=$(curl -s https://storage.googleapis.com/gt_download/ | awk 'BEGIN{FS="<Key>"; OFS="\n<Key>"} {$1=$1} 1' | grep x64 | sed '/<Key>nwjs/d;/<Key>test/d' | head -1 | sed 's/<Key>//;s/<\/Key>.*//')	
+	#sudo apt-get install -y libgconf-2-4
+	wget --tries 2 --connect-timeout=60 https://storage.googleapis.com/gt_download/nwjs-downloader/v0.60.0-1/nwjs-downloader_0.60.0-0_all.deb
+	sudo dpkg -i nwjs-downloader_0.60.0-0_all.deb
+	sudo apt-get --fix-broken -y install
+	sudo dpkg -i nwjs-downloader_0.60.0-0_all.deb
+	rm nwjs*.*.*.deb
+	
+	#https://storage.googleapis.com/gt_download/v1.22.0725/gridtracker_1.22.0725_all.deb
+	
+	GRIDDLL=$(curl -s https://storage.googleapis.com/gt_download/ | awk 'BEGIN{FS="<Key>"; OFS="\n<Key>"} {$1=$1} 1' | grep all.deb | sed '/<Key>nwjs/d;/<Key>test/d' | head -1 | sed 's/<Key>//;s/<\/Key>.*//')	
 	GT_DIR=$(echo $GRIDDLL | sed 's|/.*||')
 	GRIDDLL=$(echo $GRIDDLL | sed 's/.*GridTracker/GridTracker/')
-	else
-	#GRIDDLL=$(curl -s https://download.gridtracker.org/latest_release.html | grep x64 | sed 's/.*href="//;s/">.*//')
-	GRIDDLL=$(curl -s https://storage.googleapis.com/gt_download/ | awk 'BEGIN{FS="<Key>"; OFS="\n<Key>"} {$1=$1} 1' | grep arm32 | sed '/<Key>nwjs/d;/<Key>test/d' | head -1 | sed 's/<Key>//;s/<\/Key>.*//')
-	GT_DIR=$(echo $GRIDDLL | sed 's|/.*||')
-	GRIDDLL=$(echo $GRIDDLL | sed 's/.*GridTracker/GridTracker/')
-	fi
+	
 	wget --tries 2 --connect-timeout=60 https://storage.googleapis.com/gt_download/$GT_DIR/$GRIDDLL
 	GRIDTAR=$(echo $GRIDDLL | sed 's/.*\///g')
-	tar -xzvf $GRIDTAR
-	rm GridTracker*.gz
+	sudo dpkg -i $GRIDTAR
+	rm gridtracker*.*.*.deb
 	#determine if 32/64 bit and get correct directory name.
 	if [ `getconf LONG_BIT` = '32' ]; then
 	OLDFOLDER=$(ls | grep GridTracker*-linux-x64)
