@@ -921,16 +921,55 @@ PAT-beta() {
 	echo "##################"
 	echo "installing pat Beta"
 	echo "##################"
-	
+	PORT=8080
+	cd ${DIR}
+	if [ -f ${HOME}/.wl2k/config.json ]; then
+		cp ${HOME}/.wl2k/config.json ${DIR}/config.json
+	elif [ -f ${XDG_CONFIG_HOME}/pat/config.json ]; then
+		cp $XDG_CONFIG_HOME/pat/config.json ${DIR}/config.json
+	fi
 
 	#install pat beta used for VARA
-	##cd
-	##wget https://drive.google.com/file/d/1KrYUsze-jVLokPUjU1DQONj7H0Eo9eQF/view?usp=sharing
-	##sudo dpkg -i pat*.deb
-	##sudo systemctl restart pat@pi
-	#install vara
-	##curl -O https://raw.githubusercontent.com/WheezyE/Winelink/main/install_winelink.sh && bash install_winelink.sh vara_only
+	cd
+	wget https://drive.google.com/file/d/1KrYUsze-jVLokPUjU1DQONj7H0Eo9eQF/view?usp=sharing
+	sudo dpkg -i pat*.deb
 	
+	pat http &
+	sudo killall pat
+	sudo systemctl start pat@${WHO}
+	sudo systemctl enable pat@${WHO}
+	cd ${DIR}
+	PAT_VERSION=$(pat version | awk '{print $2}' | sed 's/v0.//;s/.0//')
+	#The Pat Winlink config file will change location in version 0.12. The below if statement
+	#checks to see which version is installed.
+	#check to see if pat version is 12 or greater. Change config file location
+	#depending on which version.
+	if [ "$PAT_VERSION" -le 11 ]; then
+	echo "pat version 11 detected"
+	FIG=$HOME/.wl2k/config.json
+	else
+	echo "pat version 12 or greater detected"
+	FIG=$XDG_CONFIG_HOME/pat/config.json
+	fi
+	#set callsign
+	sed -i "s/\"mycall\": \".*\",/\"mycall\": \"${CALL}\",/" ${FIG}
+	#set password
+	WL2KPASS=$(grep "WL2KPASS" ${MYPATH}/config | sed 's/"//g' | sed 's/WL2KPASS=//')
+	sed -i "s/\"secure_login_password\": \".*\",/\"secure_login_password\": \""$WL2KPASS"\",/" ${FIG}
+	#set locator
+	sed -i "s/\"locator\": \".*\",/\"locator\": \"$GRID\",/" ${FIG}
+	#Change localhost to 0.0.0.0
+	#This is a secutiry risk. See https://github.com/km4ack/pi-build/issues/299
+	#Changed to 127.0.0.1 on 11OCT2021 KM4ACK
+	sed -i "s/\"http_addr\": \".*\",/\"http_addr\": \"127.0.0.1:$PORT\",/" ${FIG}
+	jq '.ax25.rig = '\"my-rig\"'' ${FIG} | jq '.ardop.rig = '\"my-rig\"'' | jq '.hamlib_rigs = {'\"my-rig\"': {"address": "127.0.0.1:4532", "network": "tcp"}}' >~/Desktop/config.json
+	mv ${HOME}/Desktop/config.json ${FIG}
+	sed -i 's/"enable_http": false,/"enable_http": true,/' ${FIG}
+
+	if [ -f ${DIR}/config.json ]; then
+		mv ${DIR}/config.json ${HOME}/.wl2k/
+	fi
+		
 }
 ##################################
 #	VARA Beta  W1BAW
@@ -942,9 +981,8 @@ VARA-beta() {
 	
 
 	#install VARA beta
-	##cd
-	#install vara
-	##curl -O https://raw.githubusercontent.com/WheezyE/Winelink/main/install_winelink.sh && bash install_winelink.sh vara_only
+	cd
+	curl -O https://raw.githubusercontent.com/WheezyE/Winelink/main/install_winelink.sh && bash install_winelink.sh vara_only
 	
 }
 
