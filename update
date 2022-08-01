@@ -464,6 +464,7 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPREDICT" "$GPREDICT" "Satellite Tracking" \
 	false "TQSL" "$TQSL" "LOTW Software" \
 	false "GRIDCALC" "$GRIDCALC" "Grid Calculation Software" \
+	false "PAT-beta" "PAT beta Radio Email Application" \
 	false "VARA-beta" "VARA and PAT beta" \
 	false "DIGI-PI" "DIGI-PI intgration" \
 	false "CLOUD-LOG" "web based Logging Software" \

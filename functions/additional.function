@@ -917,7 +917,7 @@ JTDX() {
 ##################################
 #	PAT Beta  W1BAW
 ##################################
-VARA-beta() {
+PAT-beta() {
 	echo "##################"
 	echo "installing pat Beta"
 	echo "##################"
@@ -932,7 +932,21 @@ VARA-beta() {
 	curl -O https://raw.githubusercontent.com/WheezyE/Winelink/main/install_winelink.sh && bash install_winelink.sh vara_only
 	
 }
+##################################
+#	VARA Beta  W1BAW
+##################################
+VARA-beta() {
+	echo "##################"
+	echo "installing VARA Beta"
+	echo "##################"
+	
 
+	#install VARA beta
+	cd
+	#install vara
+	curl -O https://raw.githubusercontent.com/WheezyE/Winelink/main/install_winelink.sh && bash install_winelink.sh vara_only
+	
+}
 
 ##################################
 #	DIGI pi install W1BAW
