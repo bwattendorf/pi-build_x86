@@ -522,18 +522,17 @@ QTSOUND(){
     if [ `getconf LONG_BIT` = '32' ]; then
     sudo apt install libqt5serialport5
     else
-    sudo dpkg --add-architecture armhf
     sudo apt update
-    sudo apt install -y libqt5widgets5:armhf libqt5serialport5:armhf libasound2:armhf libasound2-plugins:armhf
+    sudo apt install -y libqt5widgets5 libqt5serialport5 libasound2 libasound2-plugins
     fi
 cd ${HOME}/Downloads || return
-wget --tries 2 --connect-timeout=60 https://www.cantab.net/users/john.wiseman/Downloads/Beta/piQtSoundModem
-chmod +x piQtSoundModem
-sudo mv piQtSoundModem /usr/local/bin
+wget --tries 2 --connect-timeout=60 https://www.cantab.net/users/john.wiseman/Downloads/Beta/QtSoundModem
+chmod +x QtSoundModem
+sudo mv QtSoundModem /usr/local/bin
 
 cat > /run/user/$UID/qtsoundmodem.desktop <<EOF
 [Desktop Entry]
-Name=piQtSoundModem
+Name=QtSoundModem
 GenericName=port of UZ7HO's SoundModem
 Comment=port of UZ7HO's SoundModem
 Exec=/usr/local/bin/piQtSoundModem
