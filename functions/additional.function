@@ -966,6 +966,7 @@ PAT-beta() {
 #	VARA Beta  W1BAW
 ##################################
 VARA-beta() {
+	####https://oe7drt.com/amateur-radio/2021-10-03-winlink-and-vara-on-linux/
 	echo "##################"
 	echo "installing VARA Beta"
 	echo "##################"
@@ -973,19 +974,25 @@ VARA-beta() {
 
 	#install VARA beta
 	cd
-	curl -O https://raw.githubusercontent.com/WheezyE/Winelink/main/install_winelink.sh && bash install_winelink.sh vara_only
-	
+	sudo apt-get install -y wine winetricks exe-thumbnailer
+	export WINEPREFIX=${HOME}/.wine-winlink
+    export WINEARCH=win32
+	winetricks winxp
+	winetricks sound=alsa
 }
 
 ##################################
 #	DIGI pi install W1BAW
 ##################################
 DIGI-PI() {
+	
 	echo "##################"
 	echo "installing DIGIpi"
 	echo "##################"
+	#install ttyd this is to show the syslog in a web page
+	#install novnc
+	#install xtightvnc
 	
-
 	
 	
 }
@@ -994,11 +1001,12 @@ DIGI-PI() {
 #	Cloud Log install W1BAW
 ##################################
 CLOUD-LOG() {
+	#https://github.com/magicbug/Cloudlog/wiki/Installation
 	echo "##################"
 	echo "installing Cloud log"
 	echo "##################"
-	
-
+	sudo apt-get install -y php7.4 php7.4-curl php7.4-mysql php7.4-mbstring php7.4-xml php7.4-openssl
+	git clone https://github.com/magicbug/Cloudlog.git
 	
 	
 }
