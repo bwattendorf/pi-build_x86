@@ -220,23 +220,23 @@ PITERM() {
     sudo apt update
     sudo apt install -y libqt5widgets5 libqt5serialport5 libasound2 libasound2-plugins
     #fi
-    wget --tries 2 --connect-timeout=60 https://www.cantab.net/users/john.wiseman/Downloads/Beta/QtTermTCP64
-    sudo chmod +x QtTermTCP64
-    sudo mv QtTermTCP64 /usr/local/bin/
+    wget --tries 2 --connect-timeout=60 https://www.cantab.net/users/john.wiseman/Downloads/Beta/QtTermTCP
+    sudo chmod +x QtTermTCP
+    sudo mv QtTermTCP /usr/local/bin/
 
-    cat >qttermtcp64.desktop <<EOF
+    cat >qttermtcp.desktop <<EOF
 [Desktop Entry]
 Name=QtTermTCP64
-GenericName=QtTermTCP64
+GenericName=QtTermTCP
 Comment=Terminal Program
-Exec=/usr/local/bin/QtTermTCP64
+Exec=/usr/local/bin/QtTermTCP
 Icon=/usr/share/icons/gnome/22x22/apps/xscreensaver.png
 Terminal=false
 Type=Application
 Categories=Utility
 EOF
 
-    sudo mv qttermtcp64.desktop /usr/share/applications/
+    sudo mv qttermtcp.desktop /usr/share/applications/
 
 }
 
@@ -300,8 +300,8 @@ BPQ() {
     #and modded to pull the operators call sign from the BAP config file.
     #http://www.cantab.net/users/john.wiseman/Downloads/installLinRMS
     ##########################################################################
-    export LINBPQ=pilinbpq
-    export APRS=piBPQAPRS
+    export LINBPQ=linbpq
+    export APRS=BPQAPRS
     echo "Downloading ${LINBPQ} and ${APRS} to linbpq and bpqaprs"
 
     mkdir linbpq
@@ -339,15 +339,15 @@ BPQ() {
     #####################################################
     #install BPQ config generator
     cd ${HOME}/linbpq || return
-    wget https://www.cantab.net/users/john.wiseman/Downloads/Beta/piBPQConfigGen
-    chmod +x piBPQConfigGen
+    wget https://www.cantab.net/users/john.wiseman/Downloads/Beta/BPQConfigGen
+    chmod +x BPQConfigGen
 
     cat >bpq-config.desktop <<EOF
 [Desktop Entry]
 Name=BPQ Config Generator
 GenericName=BPQ Config Generator
 Comment=Config File Generator for LinBPQ
-Exec=${HOME}/linbpq/piBPQConfigGen
+Exec=${HOME}/linbpq/BPQConfigGen
 Terminal=false
 Type=Application
 Categories=Utility
