@@ -499,7 +499,7 @@ GRIDTRACKER() {
 Name=GridTracker
 Comment=GridTracker
 GenericName=GridTracker, a WSJT-X Companion
-Exec=/usr/bin/gridTracker --disable-accelerated-2d-canvas --num-raster-threads=2
+Exec=/usr/bin/gridtracker --disable-accelerated-2d-canvas --num-raster-threads=2
 Icon=/usr/share/gridtracker/gridview.png
 Type=Application
 Encoding=UTF-8
