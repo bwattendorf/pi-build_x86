@@ -347,14 +347,16 @@ EOF
 M0IAX() {
 	cd ${DIR} || return
 	mkdir -p ${HOME}/bin/JS8Utils
+	mkdir -p /usr/local/bin/JS8Utils
 	### bruce change to download and run the python script not the compiled python
-	git clone https://github.com/m0iax/JS8CallUtilities_V2.git ${HOME}/bin/Js8Utils
+	git clone https://github.com/m0iax/JS8CallUtilities_V2.git ${HOME}/bin/JS8Utils
 	#wget https://m0iax.com/wp-content/uploads/2021/04/JS8CallUtils_v2_ubuntu2004.zip
 	#unzip JS8CallUtils_v2_ubuntu2004.zip
 	#rm JS8CallUtils_v2_ubuntu2004.zip
+	cd /${HOME}/bin/JS8Utils
 	pip3 install -r requirements.txt
 	chmod +x JS8CallUtils_v2.py
-	sudo mv JS8CallUtils_v2.py /usr/local/bin
+	sudo mv *.* /usr/local/bin/JS8Utils
 	pip install --upgrade maidenhead
 	
 
@@ -365,7 +367,7 @@ M0IAX() {
 Name=M0IAX JS8 Utils
 GenericName=M0IAX JS8 Utils
 Comment=GPS & Message Tool for JS8Call
-Exec=python3 /usr/local/bin/JS8CallUtils_v2.py
+Exec=python3 /usr/local/bin/JS8Utils/JS8CallUtils_v2.py
 Terminal=false
 Type=Application
 Categories=Network;HamRadio;
