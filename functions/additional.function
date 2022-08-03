@@ -347,7 +347,7 @@ EOF
 M0IAX() {
 	cd ${DIR} || return
 	mkdir -p ${HOME}/bin/JS8Utils
-	mkdir -p /usr/local/bin/JS8Utils
+	sudo mkdir -p /usr/local/bin/JS8Utils
 	### bruce change to download and run the python script not the compiled python
 	git clone https://github.com/m0iax/JS8CallUtilities_V2.git ${HOME}/bin/JS8Utils
 	#wget https://m0iax.com/wp-content/uploads/2021/04/JS8CallUtils_v2_ubuntu2004.zip
