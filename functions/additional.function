@@ -978,13 +978,13 @@ PAT-beta() {
 ##################################
 VARA-beta() {
 	####https://oe7drt.com/amateur-radio/2021-10-03-winlink-and-vara-on-linux/
+	####http://k6eta.com/linux/installing-rms-express-on-linux-with-wine
 	echo "##################"
 	echo "installing VARA Beta"
 	echo "##################"
-	
-
 	#install VARA beta
-	cd
+	mkdir -p ${HOME}/vara
+	cd ${HOME}/vara
 	sudo apt-get install -y wine winetricks exe-thumbnailer
 	export WINEPREFIX=${HOME}/.wine-winlink
     export WINEARCH=win32
@@ -1000,7 +1000,7 @@ DIGI-PI() {
 	echo "##################"
 	echo "installing DIGIpi"
 	echo "##################"
-	#install ttyd this is to show the syslog in a web page
+	#install ttyd ##this is to show the syslog in a web page
 	#install novnc
 	#install xtightvnc
 	
@@ -1020,5 +1020,18 @@ CLOUD-LOG() {
 	sudo apt-get install -y php7.4 php7.4-curl php7.4-mysql php7.4-mbstring php7.4-xml php7.4-openssl
 	git clone https://github.com/magicbug/Cloudlog.git
 	
+}
+##################################
+#	QDMR install W1BAW
+##################################
+QDMR() {
+	#https://kd9cpb.com/qdmr
+	echo "##################"
+	echo "installing QDMR
+	echo "##################"
+	
 	
 }
+
+
+
