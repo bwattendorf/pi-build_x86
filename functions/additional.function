@@ -843,7 +843,7 @@ fi
 cd ${HOME}/Downloads
 #DL=$(curl https://www.hamrs.app | grep x86_64 | sed 's/.*href="//;s/".*//')
 #wget ${DL}
-wget https://hamrs-releases.s3.us-east-2.amazonaws.com/1.0.6/hamrs-1.0.6-linux-x86_64.AppImage
+wget https://hamrs-releases.s3.us-east-2.amazonaws.com/1.0.6/hamrs-1.0.6-linux-i386.AppImage
 HAMRS=$(ls | grep hamrs-)
 mv ${HAMRS} hamrs
 chmod +x hamrs

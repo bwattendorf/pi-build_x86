@@ -522,7 +522,6 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPARTED" "$GPARTED" "Disk Utility Application" \
 	false "RTC" "$RTC" "Real Time Clock" \
 	false "SHOWLOG" "$SHOWLOG" "Log File Viewer" \
-	false "PISTATS" "$PISTATS" "Pi3/4 Stats Monitor" \
 	false "TELNET" "$TEL" "Telnet Protocol" \
 	false "PITERM" "$PITERM" "PiQTermTCP Terminal Program" \
 	false "QTSOUND" "$QTSOUND" "PiQtSoundModem" \

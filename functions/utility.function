@@ -226,7 +226,7 @@ PITERM() {
 
     cat >qttermtcp.desktop <<EOF
 [Desktop Entry]
-Name=QtTermTCP64
+Name=QtTermTCP
 GenericName=QtTermTCP
 Comment=Terminal Program
 Exec=/usr/local/bin/QtTermTCP

@@ -510,15 +510,7 @@ CHECK() {
 		echo "TQSL=Installed" >> $UPDATEFILE
 	fi
 
-	#----------------------------------------------------#
-	#		PISTATS
-	#----------------------------------------------------#
-	if ! hash pistats 2>/dev/null; then
-		echo "PISTATS=Not_Installed" >> $UPDATEFILE
-	else
-		echo "PISTATS=Installed" >> $UPDATEFILE
-	fi
-
+	
 	#----------------------------------------------------#
 	#		XLOG CHECK
 	#----------------------------------------------------#
