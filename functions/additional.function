@@ -979,6 +979,8 @@ PAT-beta() {
 VARA-beta() {
 	####https://oe7drt.com/amateur-radio/2021-10-03-winlink-and-vara-on-linux/
 	####http://k6eta.com/linux/installing-rms-express-on-linux-with-wine
+	####https://dcj21net.wordpress.com/2016/06/17/install-rms-express-linux/
+	####https://github.com/WheezyE/Winelink
 	echo "##################"
 	echo "installing VARA Beta"
 	echo "##################"
