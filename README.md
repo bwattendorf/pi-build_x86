@@ -26,7 +26,7 @@ Use [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to download and
 
 Power up your Raspberry Pi, login, open the terminal, and run the following command.
 
-     git clone https://github.com/bwattendorf/pi-build_x86.git \
+     git clone --branch dev https://github.com/bwattendorf/pi-build_x86.git \
       $HOME/pi-build && bash $HOME/pi-build/build-a-pi
 
 Additional help can be found in the video below.

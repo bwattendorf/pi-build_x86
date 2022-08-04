@@ -106,7 +106,7 @@ mkdir -p ${HOME}/.config/autostart
 echo "Checking for Build a Pi updates"
 CURRENT=$(head -1 ${MYPATH}/changelog | sed s'/version=//')
 
-LATEST=$(curl -s https://raw.githubusercontent.com/km4ack/pi-build/master/changelog | tac | tac | head -1 | sed 's/version=//')
+LATEST=$(curl -s https://raw.githubusercontent.com/bwattendorf/pi-build_x86/dev/changelog | tac | tac | head -1 | sed 's/version=//')
 
 if (($(echo "$LATEST $CURRENT" | awk '{print ($1 > $2)}'))); then
 	cat <<EOF >${MYPATH}/updatebap.txt
@@ -138,7 +138,7 @@ EOF
 		mv ${MYPATH}/config ${HOME}/Documents/config.bap
 		rm -rf "${MYPATH}"
 		cd ~ || ! echo "Failure"
-		git clone https://github.com/bwattendorf/pi-build_x86.git
+		git clone --branch dev https://github.com/bwattendorf/pi-build_x86.git
 		mv ${HOME}/Documents/config.bap ${MYPATH}/config
 
 		cat <<EOF >${MYPATH}/updatebap.txt
@@ -464,10 +464,10 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPREDICT" "$GPREDICT" "Satellite Tracking" \
 	false "TQSL" "$TQSL" "LOTW Software" \
 	false "GRIDCALC" "$GRIDCALC" "Grid Calculation Software" \
-	#false "PAT-beta" "$PAT-beta" "PAT beta Radio Email Application" \
-	#false "VARA-beta" "$VARA-beta" "VARA beta" \
-	#false "DIGI-PI" "$DIGI-PI" "DIGIPI integration" \
-	#false "CLOUD-LOG" "$CLOUD-LOG" "web based Logging Software" \
+	false "PAT-beta" "$PAT-beta" "PAT beta Radio Email Application" \
+	false "VARA-beta" "$VARA-beta" "VARA beta" \
+	false "DIGI-PI" "$DIGI-PI" "DIGIPI integration" \
+	false "CLOUD-LOG" "$CLOUD-LOG" "web based Logging Software" \
 	--button="Exit":1 \
 	--button="Next":2 >${ADDITIONAL}
 BUT=$?
