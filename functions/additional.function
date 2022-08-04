@@ -990,7 +990,15 @@ VARA-beta() {
     export WINEARCH=win32
 	winetricks winxp
 	winetricks sound=alsa
+	winetricks -q dotnet35sp1
+	winetricks vb6run
+	winetricks vcrun2015
+	tar -cJf wine-backup_$(date +%Y-%m-%d-%H-%M-%S)_initial-setup.tar.xz .wine-winlink
+	sudo mv /${HOME}/pi-build/vara/*.* /${HOME}/vara/
+	wine VARA_HF.exe
+	tar -cJf wine-backup_$(date +%Y-%m-%d-%H-%M-%S)_vara-installed.tar.xz .wine-winlink
 }
+
 
 ##################################
 #	DIGI pi install W1BAW
