@@ -405,10 +405,6 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPREDICT" "Satellite Tracking" \
 	false "TQSL" "LOTW Software" \
 	false "GRIDCALC" "Grid Calculation Software" \
-	#false "PAT-beta" "PAT beta Radio Email Application" \
-	#false "VARA-beta" "VARA beta" \
-	#false "DIGI-PI" "DIGI-PI integration" \
-	#false "CLOUD-LOG" "Web Based Logging Software" \
 	--button="Exit":1 \
 	--button="Check All and Continue":3 \
 	--button="Next":2 >${ADDITIONAL}
