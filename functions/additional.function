@@ -1027,8 +1027,8 @@ CLOUD-LOG() {
 	echo "##################"
 	echo "installing Cloud log"
 	echo "##################"
-	sudo apt-get install apache2 mysql-common mariadb-common
-	sudo apt-get install -y php7.4 php7.4-curl php7.4-mysql php7.4-mbstring php7.4-xml php7.4-openssl
+	sudo apt-get install -y apache2 mysql-common mariadb-common
+	sudo apt-get install -y php7.4 php7.4-curl php7.4-mysql php7.4-mbstring php7.4-xml
 	cd ${DIR} || return
 	git clone https://github.com/magicbug/Cloudlog.git
 	mkdir -p /var/www/html
