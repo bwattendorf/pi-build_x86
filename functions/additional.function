@@ -987,7 +987,7 @@ VARA-beta() {
 	echo "##################"
 	echo "installing VARA Beta"
 	echo "##################"
-	https://raw.githubusercontent.com/bwattendorf/Winelink-X86/master/install_winelink.sh && bash install_winelink.sh vara_only
+	curl -O https://raw.githubusercontent.com/bwattendorf/Winelink-X86/master/install_winelink.sh && bash install_winelink.sh vara_only
 }
 
 
