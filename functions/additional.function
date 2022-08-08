@@ -1031,6 +1031,7 @@ CLOUD-LOG() {
 	sudo apt-get install -y php7.4 php7.4-curl php7.4-mysql php7.4-mbstring php7.4-xml php7.4-openssl
 	cd ${DIR} || return
 	git clone https://github.com/magicbug/Cloudlog.git
+	mkdir -p /var/www/html
 	sudo mv Cloudlog/ /var/www/html/
 	sudo chown -R root:www-data /var/www/html/Cloudlog/application/config/
 	sudo chown -R root:www-data /var/www/html/Cloudlog/assets/qslcard/
