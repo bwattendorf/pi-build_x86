@@ -1053,7 +1053,7 @@ CLOUD-LOG() {
 QDMR() {
 	#https://kd9cpb.com/qdmr
 	echo "##################"
-	echo "installing QDMR
+	echo "installing QDMR"
 	echo "##################"
 	sudo apt-get install -y build-essential cmake  
 	sudo apt-get install -y libusb-1.0-0-dev qtbase5-dev qttools5-dev qttools5-dev-tools qtpositioning5-dev libqt5serialport5-dev libyaml-cpp-dev
