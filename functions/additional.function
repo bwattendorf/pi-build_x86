@@ -1062,12 +1062,12 @@ QDMR() {
 	cd qdmr || return
 	mkdir -p build
 	cd build || return
-	cmake .. -DCMAKE_INSTALL_PREFIX=/usr/
-	make || return
-	make install || return
+	sudo cmake .. -DCMAKE_INSTALL_PREFIX=/usr/
+	sudo make || return
+	sudo make install || return
 	
 	#create menu item and download icon	
-	cat >${HOME}/Downloads/qdmr.desktop <<EOF
+cat >${HOME}/Downloads/qdmr.desktop <<EOF
 	[Desktop Entry]
 	Name=QDMR
 	Comment=A universal code-plug programming software for DMR radios.
