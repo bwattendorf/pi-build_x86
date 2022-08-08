@@ -881,6 +881,8 @@ EOF
 	cd $HOME/Downloads
 	wget https://github.com/km4ack/pi-scripts/raw/master/hamrs-logo.png
 	sudo mv $HOME/Downloads/hamrs-logo.png /usr/share/pixmaps/hamrs-logo.png
+	
+	
 }
 
 ##################################
@@ -985,21 +987,7 @@ VARA-beta() {
 	echo "##################"
 	echo "installing VARA Beta"
 	echo "##################"
-	#install VARA beta
-	mkdir -p ${HOME}/vara
-	cd ${HOME}/vara
-	sudo apt-get install -y wine winetricks exe-thumbnailer
-	export WINEPREFIX=${HOME}/.wine-winlink
-    export WINEARCH=win32
-	winetricks winxp
-	winetricks sound=alsa
-	winetricks -q dotnet35sp1
-	winetricks vb6run
-	winetricks vcrun2015
-	tar -cJf wine-backup_$(date +%Y-%m-%d-%H-%M-%S)_initial-setup.tar.xz .wine-winlink
-	sudo mv /${HOME}/pi-build/vara/*.* /${HOME}/vara/
-	wine VARA_HF.exe
-	tar -cJf wine-backup_$(date +%Y-%m-%d-%H-%M-%S)_vara-installed.tar.xz .wine-winlink
+	https://raw.githubusercontent.com/bwattendorf/Winelink-X86/master/install_winelink.sh && bash install_winelink.sh vara_only
 }
 
 
@@ -1065,6 +1053,8 @@ QDMR() {
 	sudo cmake .. -DCMAKE_INSTALL_PREFIX=/usr/
 	sudo make || return
 	sudo make install || return
+	### W1BAW I need to do a clean up of the files still
+	
 	
 	#create menu item and download icon	
 cat >${HOME}/Downloads/qdmr.desktop <<EOF
@@ -1085,5 +1075,23 @@ EOF
 	#sudo mv $HOME/Downloads/hamrs-logo.png /usr/share/pixmaps/hamrs-logo.png
 }
 
-
-
+##################################
+#	SDR++ install W1BAW
+##################################
+SDR++() {
+	#https://github.com/shuyuan-liu/sdr-tutorials
+	echo "##################"
+	echo "installing SDR++"
+	echo "##################"
+	
+}
+##################################
+#	SDRangel install W1BAW
+##################################
+SDRangel() {
+	#https://github.com/f4exb/sdrangel/wiki/Compile-from-source-in-Linux
+	echo "##################"
+	echo "installing SDRangel"
+	echo "##################"
+	
+}
