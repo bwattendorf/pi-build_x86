@@ -1055,8 +1055,34 @@ QDMR() {
 	echo "##################"
 	echo "installing QDMR
 	echo "##################"
+	sudo apt-get install -y build-essential cmake  
+	sudo apt-get install -y libusb-1.0-0-dev qtbase5-dev qttools5-dev qttools5-dev-tools qtpositioning5-dev libqt5serialport5-dev libyaml-cpp-dev
+	cd ${DIR} || return
+	git clone https://github.com/hmatuschek/qdmr.git
+	cd qdmr || return
+	mkdir -p build
+	cd build || return
+	cmake .. -DCMAKE_INSTALL_PREFIX=/usr/
+	make || return
+	make install || return
 	
+	#create menu item and download icon	
+	cat >${HOME}/Downloads/qdmr.desktop <<EOF
+	[Desktop Entry]
+	Name=QDMR
+	Comment=A universal code-plug programming software for DMR radios.
+	Exec=qdmr
+	Icon=qdmr.png
+	Terminal=false
+	Type=Application
+	Categories=HamRadio
 	
+EOF
+	sudo mv ${HOME}/Downloads/qdmr.desktop /usr/share/applications/
+	#w1baw below I need to find the qdmr icon and move it see example below
+	#cd $HOME/Downloads
+	#wget https://github.com/km4ack/pi-scripts/raw/master/hamrs-logo.png
+	#sudo mv $HOME/Downloads/hamrs-logo.png /usr/share/pixmaps/hamrs-logo.png
 }
 
 
