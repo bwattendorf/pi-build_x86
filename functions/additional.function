@@ -641,18 +641,19 @@ EES() {
 		sudo apt-get install -y ghostwriter
 	fi
 	#Install the KM4ACK EES
+	sudo mkdir /var/www/html/EES
 	cd ${DIR} || return
 	git clone https://github.com/km4ack/EES-LITE.git
 	cd ${DIR}/EES-LITE || return
 	#git dev branch of code
 	git checkout dev
-	sudo cp -r ${DIR}/EES-LITE/* /var/www/html/
+	sudo cp -r ${DIR}/EES-LITE/* /var/www/html/EES
 	rm -rf "${DIR}/EES-LITE"
-	cd /var/www/html || return
-	sudo chmod +x /var/www/html/firstrun
-	sudo /var/www/html/./firstrun
-	sudo sed -i "s/N0CALL/${CALL}/" /var/www/html/config.php
-	sudo sed -i 's/REMINDER\ FOR\ OPERATOR\ TO\ DO\ SOMETHING/ENABLE\ AUTO\ POST\ REPLY\ IN\ CRON/' /var/www/html/config.php
+	cd /var/www/html/EES || return
+	sudo chmod +x /var/www/html/EES/firstrun
+	sudo /var/www/html/EES/./firstrun
+	sudo sed -i "s/N0CALL/${CALL}/" /var/www/html/EES/config.php
+	sudo sed -i 's/REMINDER\ FOR\ OPERATOR\ TO\ DO\ SOMETHING/ENABLE\ AUTO\ POST\ REPLY\ IN\ CRON/' /var/www/html/EES/config.php
 	cd ${DIR} || return
 	#Change Pat Winlink port so it won't interfer with the EES
 	sed -i 's/:8080/:5000/' ${XDG_CONFIG_HOME}/pat/config.json
@@ -662,24 +663,24 @@ EES() {
 	sudo systemctl start pat@${WHO}
 
 	#Move info.markdown from EES folder to Documents
-	sudo mv /var/www/html/info.markdown ${HOME}/Documents/
+	sudo mv /var/www/html/EES/info.markdown ${HOME}/Documents/
 	sudo chown ${WHO}:${WHO} ${HOME}/Documents/info.markdown
 	#move info.html to pi documents folder
-	sudo cp /var/www/html/index.html ${HOME}/Documents/info.html
+	sudo cp /var/www/html/EES/index.html ${HOME}/Documents/info.html
 	sudo chown ${WHO}:${WHO} ${HOME}/Documents/info.html
 	#move script to be run by cron to bin dir
-	sudo mv /var/www/html/webcopy ${HOME}/bin/
+	sudo mv /var/www/html/EES/webcopy ${HOME}/bin/
 	sudo chown ${WHO}:${WHO} ${HOME}/bin/webcopy
 	sudo chmod +x ${HOME}/bin/webcopy
 
 	#set up cron job for EES
 	echo "#-----Start EES Server Options------" >>${TEMPCRON}
 	echo "#Move EES email to Pat Winlink Outbox" >>${TEMPCRON}
-	echo "*/1 * * * * /var/www/html/movetopat" >>${TEMPCRON}
+	echo "*/1 * * * * /var/www/html/EES/movetopat" >>${TEMPCRON}
 	echo " " >>${TEMPCRON}
 	echo "#Auto post replies for EES server" >>${TEMPCRON}
 	echo "#Default is off. Activate by removing # on line below" >>${TEMPCRON}
-	echo "#*/1 * * * * /var/www/html/autopostreply" >>${TEMPCRON}
+	echo "#*/1 * * * * /var/www/html/EES/autopostreply" >>${TEMPCRON}
 	echo "#Line below moves info.html to index.html when modified" >>${TEMPCRON}
 	echo "*/1 * * * * ${HOME}/bin/webcopy" >>${TEMPCRON}
 	echo "#-----End EES Server Options------" >>${TEMPCRON}
@@ -1028,6 +1029,7 @@ CLOUD-LOG() {
 	echo "##################"
 	sudo apt-get install apache2 mysql-common mariadb-common
 	sudo apt-get install -y php7.4 php7.4-curl php7.4-mysql php7.4-mbstring php7.4-xml php7.4-openssl
+	cd ${DIR} || return
 	git clone https://github.com/magicbug/Cloudlog.git
 	
 }
