@@ -138,7 +138,7 @@ EOF
 		mv ${MYPATH}/config ${HOME}/Documents/config.bap
 		rm -rf "${MYPATH}"
 		cd ~ || ! echo "Failure"
-		git clone https://github.com/bwattendorf/pi-build_x86.git  $HOME/pi-build
+		git clone https://github.com/bwattendorf/pi-build_x86.git:pi-build
 		mv ${HOME}/Documents/config.bap ${MYPATH}/config
 
 		cat <<EOF >${MYPATH}/updatebap.txt
