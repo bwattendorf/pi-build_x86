@@ -391,7 +391,6 @@ CHECK() {
 	#----------------------------------------------------#
 	GRIDTRACKER=$(ls /usr/bin | grep gridtracker)
 	if [ -n "$GRIDTRACKER" ]; then
-	if [ -f /usr/bin/gridtracker ]; then
 		echo "GRIDTRACK=Installed" >> $UPDATEFILE
 	else
 		echo "GRIDTRACK=Not_Installed" >> $UPDATEFILE
