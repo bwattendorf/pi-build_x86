@@ -1,7 +1,5 @@
-version=3.2.7
+version=3.2.8
 
-3.2.7      made changes to update search
-		this is a test
 
 3.2.4		Update HotSpot Tools shortcut
 		Change 1000 to UID in update script
