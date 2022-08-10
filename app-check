@@ -91,7 +91,7 @@ CHECK() {
 	#----------------------------------------------------#
 	#		M0IAX
 	#----------------------------------------------------#
-	if [ -f /usr/local/bin/JS8CallUtils_v2 ]; then
+	if [ -f /usr/local/bin/JS8Utils/JS8CallUtils_v2.py ]; then
 		echo "M0IAX=Installed" >> $UPDATEFILE
 	else
 		echo "M0IAX=Not_Installed" >> $UPDATEFILE
@@ -389,8 +389,7 @@ CHECK() {
 	#----------------------------------------------------#
 	#		GRIDTRACKER
 	#----------------------------------------------------#
-	GT="${HOME}/GridTracker"
-	if [ ! -d "$GT" ]; then
+	if [ -f /usr/bin/gridtracker ]; then
 		echo "GRIDTRACK=Not_Installed" >> $UPDATEFILE
 	else
 		echo "GRIDTRACK=Installed" >> $UPDATEFILE
@@ -554,7 +553,7 @@ fi
 #----------------------------------------------------#
 #		piQtTermTCP
 #----------------------------------------------------#
-if [ -f /usr/local/bin/QtTermTCP64 ]; then
+if [ -f /usr/local/bin/QtTermTCP ]; then
 	echo "PITERM=Installed" >> $UPDATEFILE
 else
 	echo "PITERM=Not_Installed" >> $UPDATEFILE
