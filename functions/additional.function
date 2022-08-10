@@ -1054,7 +1054,7 @@ QDMR() {
 	sudo make || return
 	sudo make install || return
 	### W1BAW I need to do a clean up of the files still
-	rm -rf "${MYPATH}/temp"
+	sudo rm -rf "${MYPATH}/temp"
 	
 	#create menu item and download icon	
 cat >${HOME}/Downloads/qdmr.desktop <<EOF
