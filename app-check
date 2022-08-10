@@ -684,41 +684,6 @@ echo "Checking Packet Search"
 		echo "QTSOUND=Not_Installed" >> $UPDATEFILE
 	fi
 
-#----------------------------------------------------#
-#		Pat beta
-#----------------------------------------------------#
-if [ ! -f /usr/local/bin/hamrs ]; then
-	echo "PAT-beta=Not_Installed" >> $UPDATEFILE
-else
-echo "PAT-BETA=Installed" >> $UPDATEFILE
-fi
-
-#----------------------------------------------------#
-#		VARA beta
-#----------------------------------------------------#
-if [ ! -f /usr/local/bin/hamrs ]; then
-	echo "VARA-beta=Not_Installed" >> $UPDATEFILE
-else
-echo "VARA-BETA=Installed" >> $UPDATEFILE
-fi
-
-#----------------------------------------------------#
-#		DIGI-pi
-#----------------------------------------------------#
-if [ ! -f /usr/local/bin/hamrs ]; then
-	echo "DIGI-PI=Not_Installed" >> $UPDATEFILE
-else
-echo "DIGI-PI=Installed" >> $UPDATEFILE
-fi
-
-#----------------------------------------------------#
-#		CLOUD-LOG
-#----------------------------------------------------#
-if [ ! -f /usr/local/bin/hamrs ]; then
-	echo "CLOUD-LOG=Not_Installed" >> $UPDATEFILE
-else
-echo "CLOUD-LOG=Installed" >> $UPDATEFILE
-fi
 
 
 CHECK
