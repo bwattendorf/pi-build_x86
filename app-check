@@ -91,7 +91,7 @@ CHECK() {
 	#----------------------------------------------------#
 	#		M0IAX
 	#----------------------------------------------------#
-	if [ -f /usr/local/bin/JS8CallUtils_v2 ]; then
+	if [ -f /usr/local/bin/JS8Utils/JS8CallUtils_v2.py ]; then
 		echo "M0IAX=Installed" >> $UPDATEFILE
 	else
 		echo "M0IAX=Not_Installed" >> $UPDATEFILE
@@ -389,13 +389,14 @@ CHECK() {
 	#----------------------------------------------------#
 	#		GRIDTRACKER
 	#----------------------------------------------------#
-	GT="${HOME}/GridTracker"
-	if [ ! -d "$GT" ]; then
-		echo "GRIDTRACK=Not_Installed" >> $UPDATEFILE
-	else
+	GRIDTRACKER=$(ls /usr/bin | grep gridtracker)
+	if [ -n "$GRIDTRACKER" ]; then
 		echo "GRIDTRACK=Installed" >> $UPDATEFILE
+	else
+		echo "GRIDTRACK=Not_Installed" >> $UPDATEFILE
 	fi
-
+	
+	
 	#----------------------------------------------------#
 	#		PROPAGATION
 	#----------------------------------------------------#
@@ -417,7 +418,7 @@ CHECK() {
 	#----------------------------------------------------#
 	#		EES
 	#----------------------------------------------------#
-	if [ -f /var/www/html/email.php ]; then
+	if [ -f /var/www/html/EES/email.php ]; then
 		echo "EES=Installed" >> $UPDATEFILE
 	else
 		echo "EES=Not_Installed" >> $UPDATEFILE
@@ -554,7 +555,7 @@ fi
 #----------------------------------------------------#
 #		piQtTermTCP
 #----------------------------------------------------#
-if [ -f /usr/local/bin/QtTermTCP64 ]; then
+if [ -f /usr/local/bin/QtTermTCP ]; then
 	echo "PITERM=Installed" >> $UPDATEFILE
 else
 	echo "PITERM=Not_Installed" >> $UPDATEFILE
@@ -678,7 +679,7 @@ echo "Checking Packet Search"
 	#----------------------------------------------------#
 	#		piQtSoundModem
 	#----------------------------------------------------#
-	if [ -f /usr/local/bin/piQtSoundModem ]; then
+	if [ -f /usr/local/bin/QtSoundModem ]; then
 		echo "QTSOUND=Installed" >> $UPDATEFILE
 	else
 		echo "QTSOUND=Not_Installed" >> $UPDATEFILE

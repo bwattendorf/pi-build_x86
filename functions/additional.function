@@ -1083,6 +1083,8 @@ SDR++() {
 	echo "##################"
 	echo "installing SDR++"
 	echo "##################"
+	cd $HOME/Downloads
+	wget https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/1.0.4/sdrpp_debian_bullseye_amd64.deb
 	
 }
 ##################################
