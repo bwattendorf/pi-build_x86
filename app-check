@@ -389,10 +389,12 @@ CHECK() {
 	#----------------------------------------------------#
 	#		GRIDTRACKER
 	#----------------------------------------------------#
+	GRIDTRACKER=$(ls /usr/bin | grep gridtracker)
+	if [ -n "$GRIDTRACKER" ]; then
 	if [ -f /usr/bin/gridtracker ]; then
-		echo "GRIDTRACK=Not_Installed" >> $UPDATEFILE
-	else
 		echo "GRIDTRACK=Installed" >> $UPDATEFILE
+	else
+		echo "GRIDTRACK=Not_Installed" >> $UPDATEFILE
 	fi
 
 	#----------------------------------------------------#
@@ -677,7 +679,7 @@ echo "Checking Packet Search"
 	#----------------------------------------------------#
 	#		piQtSoundModem
 	#----------------------------------------------------#
-	if [ -f /usr/local/bin/piQtSoundModem ]; then
+	if [ -f /usr/local/bin/QtSoundModem ]; then
 		echo "QTSOUND=Installed" >> $UPDATEFILE
 	else
 		echo "QTSOUND=Not_Installed" >> $UPDATEFILE
