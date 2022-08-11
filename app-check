@@ -725,9 +725,9 @@ fi
 #		QDMR
 #----------------------------------------------------#
 if ! hash qdmr 2>/dev/null; then
-	echo "QDMR=Installed" >> $UPDATEFILE
+	echo "QDMR=Not_Installed" >> $UPDATEFILE
 else
-echo "QDMR=Not_Installed" >> $UPDATEFILE
+echo "QDMR=Installed" >> $UPDATEFILE
 fi
 
 
