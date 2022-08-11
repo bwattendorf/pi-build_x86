@@ -922,7 +922,7 @@ JTDX() {
 ##################################
 #	PAT Beta  W1BAW
 ##################################
-PAT-beta() {
+PATbeta() {
 	echo "##################"
 	echo "installing pat Beta"
 	echo "##################"
@@ -979,7 +979,7 @@ PAT-beta() {
 ##################################
 #	VARA Beta  W1BAW
 ##################################
-VARA-beta() {
+VARAbeta() {
 	####https://oe7drt.com/amateur-radio/2021-10-03-winlink-and-vara-on-linux/
 	####http://k6eta.com/linux/installing-rms-express-on-linux-with-wine
 	####https://dcj21net.wordpress.com/2016/06/17/install-rms-express-linux/
@@ -994,7 +994,7 @@ VARA-beta() {
 ##################################
 #	DIGI pi install W1BAW
 ##################################
-DIGI-PI() {
+DIGIPI() {
 	
 	echo "##################"
 	echo "installing DIGIpi"
@@ -1010,7 +1010,7 @@ DIGI-PI() {
 ##################################
 #	Cloud Log install W1BAW
 ##################################
-CLOUD-LOG() {
+CLOUDLOG() {
 	#https://github.com/magicbug/Cloudlog/wiki/Installation
 	echo "##################"
 	echo "installing Cloud log"
@@ -1053,7 +1053,6 @@ QDMR() {
 	sudo cmake .. -DCMAKE_INSTALL_PREFIX=/usr/
 	sudo make || return
 	sudo make install || return
-	### W1BAW I need to do a clean up of the files still
 	sudo rm -rf /tmp/qdmr
 	
 	#create menu item and download icon	
@@ -1068,6 +1067,7 @@ cat >${HOME}/Downloads/qdmr.desktop <<EOF
 	Categories=HamRadio
 	
 EOF
+
 	sudo mv ${HOME}/Downloads/qdmr.desktop /usr/share/applications/
 	sudo mv /usr/share/icons/hicolor/32x32/qdmr.png /usr/share/pixmaps/qdmr.png
 	
