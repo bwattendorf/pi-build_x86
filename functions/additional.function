@@ -1054,7 +1054,7 @@ QDMR() {
 	sudo make || return
 	sudo make install || return
 	### W1BAW I need to do a clean up of the files still
-	sudo rm -rf tmp/qdmr
+	sudo rm -rf /tmp/qdmr
 	
 	#create menu item and download icon	
 cat >${HOME}/Downloads/qdmr.desktop <<EOF
@@ -1069,10 +1069,7 @@ cat >${HOME}/Downloads/qdmr.desktop <<EOF
 	
 EOF
 	sudo mv ${HOME}/Downloads/qdmr.desktop /usr/share/applications/
-	#w1baw below I need to find the qdmr icon and move it see example below
-	#cd $HOME/Downloads
-	#wget https://github.com/km4ack/pi-scripts/raw/master/hamrs-logo.png
-	#sudo mv $HOME/Downloads/hamrs-logo.png /usr/share/pixmaps/hamrs-logo.png
+	sudo mv /usr/share/icons/hicolor/32x32/qdmr.png /usr/share/pixmaps/qdmr.png
 	
 }
 
