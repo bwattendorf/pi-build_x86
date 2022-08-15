@@ -180,6 +180,12 @@ cat >hamradio.menu <<EOF
           <Category>flsuite</Category>
     </Include>
     </Menu>
+	<Name>VARA</Name>
+     <Directory>VARA.directory</Directory>
+    <Include>
+          <Category>VARA</Category>
+    </Include>
+    </Menu>
         <Menu>
             <Name>KM4ACK</Name>
             <Directory>km4ack.directory</Directory>

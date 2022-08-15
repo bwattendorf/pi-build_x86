@@ -464,10 +464,10 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPREDICT" "$GPREDICT" "Satellite Tracking" \
 	false "TQSL" "$TQSL" "LOTW Software" \
 	false "GRIDCALC" "$GRIDCALC" "Grid Calculation Software" \
-	false "PAT beta" "$PATbeta" "PAT beta Radio Email Application" \
-	false "VARA beta" "$VARAbeta" "VARA beta" \
-	false "DIGI PI" "$DIGIPI" "DIGIPI integration" \
-	false "CLOUD LOG" "$CLOUDLOG" "web based Logging Software" \
+	false "PATbeta" "$PATbeta" "PAT beta Radio Email Application" \
+	false "VARAbeta" "$VARAbeta" "VARA beta" \
+	false "DIGIPI" "$DIGIPI" "DIGIPI integration" \
+	false "CLOUDLOG" "$CLOUDLOG" "web based Logging Software" \
 	false "QDMR" "$QDMR" "DMR radio programmer" \
 	--button="Exit":1 \
 	--button="Next":2 >${ADDITIONAL}
