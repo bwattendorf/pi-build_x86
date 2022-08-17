@@ -995,16 +995,11 @@ VARAbeta() {
 #	DIGI pi install W1BAW
 ##################################
 DIGIPI() {
-	
 	echo "##################"
 	echo "installing DIGIpi"
 	echo "##################"
-	#install ttyd ##this is to show the syslog in a web page
-	#install novnc
-	#install xtightvnc
-	
-	
-	
+	git clone https://github.com/bwattendorf/digipi_x86.git \
+    $HOME/digipi && sudo bash $HOME/digipi/digipi
 }
 
 ##################################
