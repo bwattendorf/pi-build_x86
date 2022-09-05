@@ -479,7 +479,6 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "YGATE" "Yaesu APRS Software" \
 	false "BPQ" "LinBPQ Software" \
 	false "BATT" "Battery Test Script" \
-	#false "VNC" "VNC Client Application" \
 	false "XYGRIB" "Grib File Viewer" \
 	--button="Exit":1 \
 	--button="Check All and Continue":3 \
