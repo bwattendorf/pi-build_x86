@@ -171,15 +171,15 @@ EOF
 }
 
 ##################################
-#	VARA Beta  W1BAW
+#	VARA
 ##################################
-VARAbeta() {
+VARA() {
 	####https://oe7drt.com/amateur-radio/2021-10-03-winlink-and-vara-on-linux/
 	####http://k6eta.com/linux/installing-rms-express-on-linux-with-wine
 	####https://dcj21net.wordpress.com/2016/06/17/install-rms-express-linux/
 	####https://github.com/WheezyE/Winelink
 	echo "##################"
-	echo "installing VARA Beta"
+	echo "installing VARA"
 	echo "##################"
 	curl -O https://raw.githubusercontent.com/bwattendorf/Winelink-X86/master/install_winelink.sh && bash install_winelink.sh bap
 }

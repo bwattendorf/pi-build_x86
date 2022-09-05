@@ -1010,6 +1010,43 @@ wget https://sourceforge.net/projects/repeater-start/files/$REPEAT_LATEST
 sudo dpkg -i $REPEAT_LATEST
 }
 
+##################################
+#	echolink install W1BAW
+##################################
+ECHOLINK() {
+	#https://github.com/shuyuan-liu/sdr-tutorials
+	echo "##################"
+	echo "installing ECHOLINK"
+	echo "##################"
+	sudo apt install qtel
+	
+}
+
+##################################
+#	WSJTX-Z install W1BAW
+##################################
+WSJTXZ() {
+	#https://github.com/shuyuan-liu/sdr-tutorials
+	echo "##################"
+	echo "installing SDR++"
+	echo "##################"
+	cd $HOME/Downloads
+	wget https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/1.0.4/sdrpp_debian_bullseye_amd64.deb
+	
+}
+
+##################################
+#	JTDX install W1BAW
+##################################
+JTDX() {
+	#https://github.com/shuyuan-liu/sdr-tutorials
+	echo "##################"
+	echo "installing SDR++"
+	echo "##################"
+	cd $HOME/Downloads
+	wget https://github.com/AlexandreRouma/SDRPlusPlus/releases/download/1.0.4/sdrpp_debian_bullseye_amd64.deb
+	
+}
 
 ##################################
 #	SDR++ install W1BAW
