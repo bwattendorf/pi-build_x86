@@ -306,6 +306,7 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPSUPDATE" "${GPSUPDATE}" "Tool to Manage GPS Devices" \
 	false "ARDOP" "$ARDOP" "Mode for HF" \
 	false "ARDOPGUI" "$ARDOPGUI" "GUI for ARDOP" \
+	false "VARA" "$VARA" "VARA Modem" \
 	false "DIREWOLF" "$DIRE" "Software TNC" \
 	false "AX25" "$AX25" "Data Link Layer Protocol" \
 	false "PULSE" "$PULSE" "Sound server" \
@@ -450,6 +451,7 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "CONKY" "$CONKY" "System Information Display" \
 	false "WSJTX" "$FT8" "Weak signal digital mode software" \
 	false "JS8CALL" "$JS8" "Weak signal digital mode software" \
+	false "REPEAT" "$REPEAT" "Repeater Directory" \
 	false "XASTIR" "$XASTIR" "APRS Client" \
 	false "YAAC" "$YAAC" "Yet Another APRS Client" \
 	false "PI-APRS" "$PIAPRS" "APRS Messaging Client" \
@@ -464,8 +466,6 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPREDICT" "$GPREDICT" "Satellite Tracking" \
 	false "TQSL" "$TQSL" "LOTW Software" \
 	false "GRIDCALC" "$GRIDCALC" "Grid Calculation Software" \
-	false "PATbeta" "$PATbeta" "PAT beta Radio Email Application" \
-	false "VARAbeta" "$VARAbeta" "VARA beta" \
 	false "DIGIPI" "$DIGIPI" "DIGIPI integration" \
 	false "CLOUDLOG" "$CLOUDLOG" "web based Logging Software" \
 	false "QDMR" "$QDMR" "DMR radio programmer" \
@@ -521,7 +521,6 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "CALLSIGN" "${CALLSIGN}" "Call Sign Lookup Utility" \
 	false "TEMPCONVERT" "$TEMPCONVERT" "Temperature Converter" \
 	false "GPARTED" "$GPARTED" "Disk Utility Application" \
-	false "RTC" "$RTC" "Real Time Clock" \
 	false "SHOWLOG" "$SHOWLOG" "Log File Viewer" \
 	false "TELNET" "$TEL" "Telnet Protocol" \
 	false "PITERM" "$PITERM" "PiQTermTCP Terminal Program" \
@@ -530,7 +529,7 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "YGATE" "$YGATE" "Yaesu APRS Software" \
 	false "BPQ" "$BPQ" "LinBPQ Software" \
 	false "BATT" "$BATT" "Battery Test Script" \
-	false "VNC" "$VNC" "VNC Viewer Application" \
+	#false "VNC" "$VNC" "VNC Viewer Application" \
 	false "XYGRIB" "$XYGRIB" "Grib file viewer" \
 	--button="Exit":1 \
 	--button="Install/Update Selected":2 >${UTILITY}

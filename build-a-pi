@@ -239,6 +239,7 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPSUPDATE" "Tool to Manage GPS Devices" \
 	false "ARDOP" "Modem for HF" \
 	false "ARDOPGUI" "GUI for ARDOP" \
+	false "VARA" "VARA Modem" \
 	false "HAMLIB" "Needed for Rig Control" \
 	false "DIREWOLF" "Software TNC" \
 	false "AX25" "Data Link Layer Protocol" \
@@ -252,7 +253,7 @@ if [ ${BUT} = 252 ] || [ ${BUT} = 1 ]; then
 fi
 
 if [ ${BUT} = 3 ]; then
-	BASEAPPS=(HOTSPOT HSTOOLS GPS ARDOP ARDOPGUI HAMLIB DIREWOLF AX25 PULSE GPSUPDATE)
+	BASEAPPS=(HOTSPOT HSTOOLS GPS ARDOP ARDOPGUI VARA HAMLIB DIREWOLF AX25 PULSE GPSUPDATE)
 	for i in "${BASEAPPS[@]}"; do
 		echo "$i" >>${BASE}
 	done
@@ -405,8 +406,7 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPREDICT" "Satellite Tracking" \
 	false "TQSL" "LOTW Software" \
 	false "GRIDCALC" "Grid Calculation Software" \
-	false "PATbeta" "PAT beta Radio Email Application" \
-	false "VARAbeta" "VARA beta" \
+	false "REPEAT" "Repeater Directory" \
 	false "DIGIPI" "DIGI-PI integration" \
 	false "CLOUDLOG" "Web Based Logging Software" \
 	false "QDMR" "DRM programmer" \
@@ -421,7 +421,7 @@ fi
 if [ ${BUT} = 3 ]; then
 	ADDAPPS=(CONKY PI-APRS CHIRP GARIM PAT PAT-MENU JS8CALL M0IAX WSJTX PYQSO
 		HAMRS EES QSSTV GRIDTRACKER HAMCLOCK PROPAGATION YAAC XASTIR GPREDICT TQSL
-		GRIDCALC CQRLOG PATbeta VARAbeta DIGIPI CLOUDLOG QDMR)
+		GRIDCALC CQRLOG DIGIPI CLOUDLOG REPEAT QDMR)
 
 	for i in "${ADDAPPS[@]}"; do
 		echo "$i" >>${ADDITIONAL}
@@ -479,7 +479,7 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "YGATE" "Yaesu APRS Software" \
 	false "BPQ" "LinBPQ Software" \
 	false "BATT" "Battery Test Script" \
-	false "VNC" "VNC Client Application" \
+	#false "VNC" "VNC Client Application" \
 	false "XYGRIB" "Grib File Viewer" \
 	--button="Exit":1 \
 	--button="Check All and Continue":3 \
@@ -490,7 +490,7 @@ if [ ${BUT} = 252 ] || [ ${BUT} = 1 ]; then
 fi
 
 if [ ${BUT} = 3 ]; then
-	UTILAPPS=(DIPOLE PACKETSEARCH CALLSIGN TEMPCONVERT GPARTED SHOWLOG PISTATS TELNET PITERM QTSOUND SECURITY YGATE BPQ BATT VNC XYGRIB)
+	UTILAPPS=(DIPOLE PACKETSEARCH CALLSIGN TEMPCONVERT GPARTED SHOWLOG PISTATS TELNET PITERM QTSOUND SECURITY YGATE BPQ BATT XYGRIB)
 	for i in "${UTILAPPS[@]}"; do
 		echo "$i" >>${UTILITY}
 	done
@@ -652,6 +652,8 @@ sudo apt purge -y libhamlib4
 #restore crontab
 crontab ${TEMPCRON}
 rm ${TEMPCRON}
+
+sudo apt autoremove
 
 echo "WE ARE ALL DONE HERE.  If you close this window, you will have to reboot manually."
 
