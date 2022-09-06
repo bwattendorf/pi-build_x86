@@ -61,7 +61,7 @@ fi
 #	Verify not run as root
 #####################################
 if [ "$WHO" = 'root' ]; then
-	yad --form --width=500 --text-align=center --center --title="Build-a-Pi" --text-align=center \
+	yad --form --width=500 --text-align=center --center --title="CQ-Linux" --text-align=center \
 		--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 		--text="<b>ROOT DETECTED</b>\rDon't run this script as root. \
 Restart the script without sudo" \
@@ -82,7 +82,7 @@ Build a Pi 3.2.0 and later does not support
 RaspiOS Buster or earlier versions of RaspiOS.
 You should consider upgrading to RaspiOS 11
 (Bullseye). By clicking ok you will be moved
-to the last version of Build a Pi (3.1.4) that 
+to the last version of CQ Linux (3.1.4) that 
 supports Pi OS Buster. Please note there are 
 no plans to update Build a Pi for Buster going 
 forward.  In other words, you are on your own 
@@ -146,7 +146,7 @@ fi
 #####################################
 #This section commented out 12APRIL2022 for testing. Should be removed once testing is complete.
 #if [ "$WHO" != 'pi' ]; then
-#	yad --form --width=500 --text-align=center --center --title="Build-a-Pi" --text-align=center \
+#	yad --form --width=500 --text-align=center --center --title="CQ-Linux" --text-align=center \
 #		--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 #		--text="<b>USER NAME IS NOT PI</b>\rThis script is designed to be run as the pi user. Please set the user name to pi \
 #and try again. You can change the user name after the build is complete but some configuration may not work \
@@ -166,7 +166,7 @@ development.
 https://paypal.me/km4ack
 EOF
 
-INTRO=$(yad --width=550 --height=250 --text-align=center --center --title="Build-a-Pi" --show-uri \
+INTRO=$(yad --width=550 --height=250 --text-align=center --center --title="CQ-Linux" --show-uri \
 	--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 	--text-info \
 	--button="Continue":2 <${MYPATH}/intro.txt \
@@ -187,7 +187,7 @@ mkdir -p ${HOME}/.config/autostart
 #	Get User Call
 #####################################
 CALL() {
-	INFO=$(yad --form --width=420 --text-align=center --center --title="Build-a-Pi" \
+	INFO=$(yad --form --width=420 --text-align=center --center --title="CQ-Linux" \
 		--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 		--text="<b>version $VERSION</b>" \
 		--field="Call Sign*" \
@@ -206,14 +206,14 @@ CALL=${CALL^^}
 ATTEMPTS=0
 while [ -z "$CALL" ]; do
 	if [ $ATTEMPTS -eq 3 ]; then
-		yad --form --width=420 --text-align=center --center --title="Build-a-Pi" --text-align=center \
+		yad --form --width=420 --text-align=center --center --title="CQ-Linux" --text-align=center \
 			--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 			--text="<b>Empty callsign after 3 attempts. Quiting!</b>" \
 			--button=gtk-ok
 		exit
 	fi
 
-	yad --form --width=420 --text-align=center --center --title="Build-a-Pi" --text-align=center \
+	yad --form --width=420 --text-align=center --center --title="CQ-Linux" --text-align=center \
 		--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 		--text="<b>Call Can't be Blank</b>" \
 		--button=gtk-ok
@@ -232,7 +232,7 @@ echo "CALL=$CALL" >${CONFIG}
 yad --center --list --checklist --width=600 --height=600 --separator="" \
 	--image ${LOGO} --column=Check --column=App --column=Description \
 	--print-column=2 --window-icon=${LOGO} --image-on-top --text-align=center \
-	--text="<b>Base Applications</b>" --title="Build-a-Pi" \
+	--text="<b>Base Applications</b>" --title="CQ-Linux" \
 	false "HOTSPOT" "Hot Spot Generator for Portable Ops" \
 	false "HSTOOLS" "Tools to Manage Hot Spot" \
 	false "GPS" "GPS Software" \
@@ -277,7 +277,7 @@ if [ -n "$HS" ]; then
 			--text="<b>HotSpot Information\r\rPlease enter the information\rbelow \
 for the Hot Spot\r</b>NOTE: The last field is the password for the hotspot. You will use this password to \
 connect to your Pi when it is in hotspot mode <b>This password can only contain letters and numbers</b>" \
-			--title="Build-a-Pi" \
+			--title="CQ-Linux" \
 			--field="Home Wifi SSID":CB "$LIST" \
 			--field="Home Wifi Password" \
 			--field="Hot Spot Password" \
@@ -305,7 +305,7 @@ connect to your Pi when it is in hotspot mode <b>This password can only contain 
 			if [ ${COUNT} -lt 8 ]; then
 				yad --center --form --width=300 --height=200 --separator="|" \
 					--image ${LOGO} --window-icon=${LOGO} --image-on-top --text-align=center \
-					--text="<b>Hotspot password has to be 8-63 characters</b>" --title="Build-a-Pi" \
+					--text="<b>Hotspot password has to be 8-63 characters</b>" --title="CQ-Linux" \
 					--button=gtk-ok
 				HSINFO
 			fi
@@ -356,7 +356,7 @@ fi
 yad --center --list --checklist --width=600 --height=600 --separator="" \
 	--image ${LOGO} --column=Check --column=App --column=Description \
 	--print-column=2 --window-icon=${LOGO} --image-on-top --text-align=center \
-	--text="<b>FLDIGI Suite</b>" --title="Build-a-Pi" \
+	--text="<b>FLDIGI Suite</b>" --title="CQ-Linux" \
 	false "FLRIG" "Rig Contol GUI" \
 	false "FLDIGI" "Digital Software" \
 	false "FLAMP" "File Transfer Program" \
@@ -383,7 +383,7 @@ fi
 yad --center --list --checklist --width=600 --height=600 --separator="" \
 	--image ${LOGO} --column=Check --column=App --column=Description \
 	--print-column=2 --window-icon=${LOGO} --image-on-top --text-align=center \
-	--text="<b>Ham Applications</b>" --title="Build-a-Pi" \
+	--text="<b>Ham Applications</b>" --title="CQ-Linux" \
 	false "CONKY" "System Information Display" \
 	false "PI-APRS" "APRS Message Application" \
 	false "CHIRP" "Program Radios" \
@@ -433,7 +433,7 @@ fi
 HCCHECK=$(grep "HAMCLOCK" ${ADDITIONAL})
 if [ -n "$HCCHECK" ]; then
 
-	HC=$(yad --form --width=420 --text-align=center --center --title="Build-a-Pi" \
+	HC=$(yad --form --width=420 --text-align=center --center --title="CQ-Linux" \
 		--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 		--text="<b>version $VERSION</b>" \
 		--field="Ham Clock Size":CB "SMALL|LARGE" \
@@ -446,7 +446,7 @@ fi
 
 PATCHECK=$(grep "PAT" ${ADDITIONAL})
 if [ -n "$PATCHECK" ]; then
-	INFO=$(yad --form --width=420 --text-align=center --center --title="Build-a-Pi" \
+	INFO=$(yad --form --width=420 --text-align=center --center --title="CQ-Linux" \
 		--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 		--text="<b>version $VERSION</b>" \
 		--field="Six Character Grid Square" \
@@ -466,7 +466,7 @@ fi
 yad --center --list --checklist --width=600 --height=600 --separator="" \
 	--image ${LOGO} --column=Check --column=App --column=Description \
 	--print-column=2 --window-icon=${LOGO} --image-on-top --text-align=center \
-	--text="<b>Utilities</b>" --title="Build-a-Pi" \
+	--text="<b>Utilities</b>" --title="CQ-Linux" \
 	false "DIPOLE" "Dipole Calculator" \
 	false "PACKETSEARCH" "Winlink Packet Tool" \
 	false "CALLSIGN" "Call sign lookup" \

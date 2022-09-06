@@ -54,7 +54,7 @@ if [ "$V_ID" -le 10 ]; then
 NOTICEPATH=/run/user/$UID
 
 cat <<EOF >${NOTICEPATH}/intro.txt
-Build a Pi 3.2.0 and later does not support
+CQ-Linux 3.2.0 and later does not support
 RaspiOS Buster or earlier versions of RaspiOS.
 You should consider upgrading to RaspiOS 11
 (Bullseye). By clicking ok you will be moved
@@ -145,7 +145,7 @@ EOF
 Build a Pi has been updated to $LATEST. Please restart Build a Pi.
 EOF
 		BAP=$(
-			yad --width=650 --height=250 --text-align=center --center --title="Build-a-Pi" --show-uri \
+			yad --width=650 --height=250 --text-align=center --center --title="CQ-Linux" --show-uri \
 				--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 				--text-info \
 				--button="OK":2 <${MYPATH}/updatebap.txt
@@ -265,7 +265,7 @@ bash $MYPATH/app-check
 #####################################
 CALL() {
 	source ${MYPATH}/config
-	INFO=$(yad --form --width=420 --text-align=center --center --title="Build-a-Pi" \
+	INFO=$(yad --form --width=420 --text-align=center --center --title="CQ-Linux" \
 		--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 		--text="<b>version ${VERSION}</b>" \
 		--field="Call Sign*" "${CALL}" \
@@ -284,7 +284,7 @@ echo "CALL=${CALL}" >${CONFIG}
 
 #Verify call not empty
 if [ -z "${CALL}" ]; then
-	yad --form --width=420 --text-align=center --center --title="Build-a-Pi" --text-align=center \
+	yad --form --width=420 --text-align=center --center --title="CQ-Linux" --text-align=center \
 		--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 		--text="<b>Call Can't be Blank</b>" \
 		--button=gtk-ok
@@ -481,7 +481,7 @@ fi
 HCCHECK=$(cat ${ADDITIONAL} | grep HAMCLOCK)
 if [ -n "$HCCHECK" ]; then
 
-	HC=$(yad --form --width=420 --text-align=center --center --title="Build-a-Pi" \
+	HC=$(yad --form --width=420 --text-align=center --center --title="CQ-Linux" \
 		--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 		--text="<b>version $VERSION</b>" \
 		--field="Ham Clock Size":CB "SMALL|LARGE" \
@@ -494,7 +494,7 @@ fi
 
 PATCHECK=$(cat ${ADDITIONAL} | grep PAT)
 if [ -n "$PATCHECK" ]; then
-	INFO=$(yad --form --width=420 --text-align=center --center --title="Build-a-Pi" \
+	INFO=$(yad --form --width=420 --text-align=center --center --title="CQ-Linux" \
 		--image ${LOGO} --window-icon=${LOGO} --image-on-top --separator="|" --item-separator="|" \
 		--text="<b>version $VERSION</b>" \
 		--field="Six Character Grid Square" "$GRID" \
