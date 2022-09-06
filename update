@@ -466,6 +466,7 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPREDICT" "$GPREDICT" "Satellite Tracking" \
 	false "TQSL" "$TQSL" "LOTW Software" \
 	false "GRIDCALC" "$GRIDCALC" "Grid Calculation Software" \
+	false "ECHOLINK" "$ECHOLINK" "Digital audio mode" \
 	false "DIGIPI" "$DIGIPI" "DIGIPI integration" \
 	false "CLOUDLOG" "$CLOUDLOG" "web based Logging Software" \
 	false "QDMR" "$QDMR" "DMR radio programmer" \

@@ -721,5 +721,27 @@ else
 echo "QDMR=Installed" >> $UPDATEFILE
 fi
 
+#----------------------------------------------------#
+#		Repeater-Start
+#----------------------------------------------------#
+echo "Checking Repeater-Start"
+REPEAT_CURRENT_VER=$(dpkg --list | grep repeater-start | awk '{print $3}')
+REPEAT_LATEST=$(curl -s https://sourceforge.net/projects/repeater-start/files/ | grep all.deb | head -1 | sed 's/.*repeater/repeater/;s/".*//')
+REPEAT_LATEST_VER=$(echo $REPEAT_LATEST | sed 's/repeater-start_//;s/_.*//')
+
+		if (($(echo "${REPEAT_LATEST_VER} ${REPEAT_CURRENT_VER}" | awk '{print ($1 > $2)}'))); then
+			echo "REPEAT=NEEDS-UPDATE" >> $UPDATEFILE
+		else
+			echo "REPEAT=is_latest_version" >> $UPDATEFILE
+		fi
+
+#----------------------------------------------------#
+#		ECHOLINK
+#----------------------------------------------------#
+if ! hash echolink 2>/dev/null; then
+	echo "ECHOLINK=Not_Installed" >> $UPDATEFILE
+else
+echo "ECHOLINK=Installed" >> $UPDATEFILE
+fi
 
 CHECK

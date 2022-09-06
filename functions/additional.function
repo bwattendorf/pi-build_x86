@@ -1018,7 +1018,7 @@ ECHOLINK() {
 	echo "##################"
 	echo "installing ECHOLINK"
 	echo "##################"
-	sudo apt install qtel
+	sudo apt -y install qtel 
 	
 }
 
