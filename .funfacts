@@ -1,122 +1,32 @@
 #!/bin/bash
-
-#20200515 km4ack
-
-MYPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-LOGO=${MYPATH}/logo.png
-
-yad --width=400 --height=200 --title="KM4ACK Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-We confused Build-A-Pi with Bake a pi.. No more Pi = CQ- Linux was born"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Nick N1NRW Pushed for this project to check his email faster with VARA... He's impatient"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-CQ-Linux is the offspring of Build-A-Pi (KM4ACK) and DigiPi (KM6LYW)"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Bruce W1BAW and Nick N1NRW mainly enjoy CQ-Linux so we can operate remote without the YL knowing!"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-QRP Is Life"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-This project will be finished....eventually!"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Bruce W1BAW's favorite Pi... Blueberry... I mean Raspberry?"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-PSA: 99% of people who play with Raspberry Pi keep the default username and password"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Yes we know you looked up what the default is..."
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-If you don't keep a mobile and at least 3 HT's in the car are you really a Ham?"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Nick N1NRW mainly operates FT8 all day.. Because why talk to people in a hobby that is meant to "talk" to others?"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Be sure to run "telnet towel.blinkenlights.nl" to find Bruce and Nick's favorite movie"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Nick and Bruce have Matching Icom 705's because you know... QRP"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-We may or may not carry extra HF antennas in our vehicles... because a Walmart parking lot is the best place for a Dipole"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Walmart Parking Lot on the air is a real thing.. Don't worry.. I have the link so you can join next year! https://wmplota.org/"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Nick's home is slowly being overtaken by laser cut projects.."
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Bruce and Nick also build 3D printers for fun!"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Yes we know... we have no friends.."
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Nick Moved to Upstate NY after meeting his wife Rebecca"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Nick's Daughter won't stop picking on her Dad's "Pi Collection" Why can't I have Blueberry, Strawberry, and Raspberry all on display?"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Bruce has leant 3 Pi's to Nick.. They are all now full time running different images.. Bruce has never seen them again..."
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Nick has too many DMR+D-Star Hotspots.."
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Nick is team Mac.. That's why he's Jealous and needs CQ-Linux to run what he can't!"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Nick's Favorite Logbook is MacLogger DX, Bruce's is N3FJP"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-What kind of doctor fixes broken websites?"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-A URLologist"
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Still at 1%... In windows time..."
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Is your FT8 Clock off?? How embarrassing.."
-
-yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \
-    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rKM4ACK\rFun Facts</b></big></big></big>\r\r \
-Enough about N1NRW and W1BAW! Go grab a coffee or do something fun while CQ-Linux is built"
+#2022907 n1nrw
+MYPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"LOGO=${MYPATH}/logo.png
+yad --width=400 --height=200 --title="CQ Linux Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \We confused Build-A-Pi with Bake a pi.. No more Pi = CQ- Linux was born"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Nick N1NRW Pushed for this project to check his email faster with VARA... He's impatient"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \CQ-Linux is the offspring of Build-A-Pi (KM4ACK) and DigiPi (KM6LYW)"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Bruce W1BAW and Nick N1NRW mainly enjoy CQ-Linux so we can operate remote without the YL knowing!"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \QRP Is Life"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \This project will be finished....eventually!"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Bruce W1BAW's favorite Pi... Blueberry... I mean Raspberry?"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \PSA: 99% of people who play with Raspberry Pi keep the default username and password"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Yes we know you looked up what the default is..."
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \If you don't keep a mobile and at least 3 HT's in the car are you really a Ham?"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Nick N1NRW mainly operates FT8 all day.. Because why talk to people in a hobby that is meant to talk to others?"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Be sure to run telnet towel.blinkenlights.nl to find Bruce and Nick's favorite movie"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Nick and Bruce have Matching Icom 705's because you know... QRP"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \We may or may not carry extra HF antennas in our vehicles... because a Walmart parking lot is the best place for a Dipole"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Walmart Parking Lot on the air is a real thing.. Don't worry.. I have the link so you can join next year! https://wmplota.org/"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Nick's home is slowly being overtaken by laser cut projects.."
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Bruce and Nick also build 3D printers for fun!"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Yes we know... we have no friends.."
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Nick Moved to Upstate NY after meeting his wife Rebecca"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Nick's Daughter won't stop picking on her Dad's Pi Collection Why can't I have Blueberry, Strawberry, and Raspberry all on display?"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Bruce has leant 3 Pi's to Nick.. They are all now full time running different images.. Bruce has never seen them again..."
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Nick has too many DMR+D-Star Hotspots.."
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Nick is team Mac.. That's why he's Jealous and needs CQ-Linux to run what he can't!"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Nick's Favorite Logbook is MacLogger DX, Bruce's is N3FJP"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \What kind of doctor fixes broken websites?"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \A URLologist"
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Still at 1%... In windows time..."
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Is your FT8 Clock off?? How embarrassing.."
+yad --width=400 --height=200 --title="Fun Facts" --timeout=30 --image ${LOGO} --text-align=center --skip-taskbar --image-on-top \    --wrap --no-buttons --center --window-icon=${LOGO} --undecorated --text="<big><big><big><b>\r\rCQ Linux\rFun Facts</b></big></big></big>\r\r \Enough about N1NRW and W1BAW! Go grab a coffee or do something fun while CQ-Linux is built"
