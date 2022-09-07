@@ -406,7 +406,7 @@ yad --center --list --checklist --width=600 --height=600 --separator="" \
 	false "GPREDICT" "Satellite Tracking" \
 	false "TQSL" "LOTW Software" \
 	false "GRIDCALC" "Grid Calculation Software" \
-	false "ECHOLINK" "$ECHOLINK" "Digital audio mode" \
+	false "ECHOLINK" "Digital audio mode" \
 	false "REPEAT" "Repeater Directory" \
 	false "DIGIPI" "DIGI-PI integration" \
 	false "CLOUDLOG" "Web Based Logging Software" \
