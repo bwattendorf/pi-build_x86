@@ -138,8 +138,9 @@ EOF
 		mv ${MYPATH}/config ${HOME}/Documents/config.bap
 		rm -rf "${MYPATH}"
 		cd ~ || ! echo "Failure"
-		git clone --branch dev https://github.com/bwattendorf/pi-build_x86.git /${HOME}/pi-build
-		mv ${HOME}/Documents/config.bap ${MYPATH}/config 
+		git clone --branch dev https://github.com/CQ-Linux/CQ-Linux.git /${HOME}/pi-build
+		mv ${HOME}/Documents/config.bap ${MYPATH}/config
+		sudo chmod 755 /${HOME}/pi-build/update
 
 		cat <<EOF >${MYPATH}/updatebap.txt
 Build a Pi has been updated to $LATEST. Please restart Build a Pi.
