@@ -106,14 +106,14 @@ mkdir -p ${HOME}/.config/autostart
 echo "Checking for Build a Pi updates"
 CURRENT=$(head -1 ${MYPATH}/changelog | sed s'/version=//')
 
-LATEST=$(curl -s https://raw.githubusercontent.com/bwattendorf/pi-build_x86/dev/changelog | tac | tac | head -1 | sed 's/version=//')
+LATEST=$(curl -s https://raw.githubusercontent.com/CQ-Linux/CQ-Linux/dev/changelog | tac | tac | head -1 | sed 's/version=//')
 
 if (($(echo "$LATEST $CURRENT" | awk '{print ($1 > $2)}'))); then
 	cat <<EOF >${MYPATH}/updatebap.txt
 Build a Pi update available. Current version is $CURRENT and
 the lateest version is $LATEST. Would you like to update?
 
-Change log - https://github.com/km4ack/pi-build/blob/master/changelog
+Change log - https://github.com/CQ-Linux/CQ-Linux/blob/dev/changelog
 EOF
 	BAP=$(
 		yad --width=650 --height=250 --text-align=center --center --title="Build-a-Pi" --show-uri \
