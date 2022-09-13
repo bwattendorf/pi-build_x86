@@ -113,7 +113,7 @@ if (($(echo "$LATEST $CURRENT" | awk '{print ($1 > $2)}'))); then
 Build a Pi update available. Current version is $CURRENT and
 the lateest version is $LATEST. Would you like to update?
 
-Change log - https://github.com/bwattendorf/pi-build_x86/blob/master/changelog
+Change log - https://github.com/CQ-Linux/CQ-Linux/blob/master/changelog
 EOF
 	BAP=$(
 		yad --width=650 --height=250 --text-align=center --center --title="Build-a-Pi" --show-uri \
